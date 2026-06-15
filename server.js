@@ -158,7 +158,17 @@ async function transcribeSpeaking(req, res) {
     body: form
   });
   const payload = await response.json();
-  if (!response.ok) throw new Error(payload?.error?.message || "Groq transcription request failed.");
+  console.log("MIME:", mime);
+console.log("FILE SIZE:", bytes.length);
+console.log("GROQ RESPONSE:", JSON.stringify(payload));
+  if (!response.ok) {
+  console.error("GROQ ERROR:", JSON.stringify(payload));
+  throw new Error(
+    payload?.error?.message ||
+    JSON.stringify(payload) ||
+    "Groq transcription request failed."
+  );
+}
   const transcript = String(payload.text || "").trim();
   if (!transcript) return json(res, 422, { error: "No clear speech was detected in the recording." });
   json(res, 200, { transcript, model: SPEECH_MODEL });
