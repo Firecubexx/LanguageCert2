@@ -1216,7 +1216,7 @@ The broader lesson is that removing an inconvenience can also remove a useful st
           render();
         };
         state.answers.recording = true;
-        mediaRecorder.start(250);
+        mediaRecorder.start();
         button.textContent = "Stop recording";
         button.classList.add("recording-live");
         const status = document.getElementById("aiStatus");
