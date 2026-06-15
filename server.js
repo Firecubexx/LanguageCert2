@@ -199,7 +199,7 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-server.listen(PORT, "127.0.0.1", () => {
-  console.log(`SELT Mastery running at http://127.0.0.1:${PORT}`);
-  console.log(API_KEY ? "Groq AI evaluation is configured." : "Add GROQ_API_KEY to .env to enable AI evaluation.");
+server.listen(PORT, () => {
+  console.log(`SELT Mastery running on port ${PORT}`);
+  console.log(API_KEY ? "Groq AI evaluation is configured." : "Add GROQ_API_KEY to enable AI evaluation.");
 });
