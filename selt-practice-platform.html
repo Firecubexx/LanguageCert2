@@ -1202,6 +1202,8 @@ The broader lesson is that removing an inconvenience can also remove a useful st
         recordingStartedAt = Date.now();
         mediaRecorder.ondataavailable = event => { if (event.data.size) audioChunks.push(event.data); };
         mediaRecorder.onstop = async () => {
+          console.log("CHUNKS:", audioChunks.length);
+          console.log("FIRST CHUNK:", audioChunks[0]);
           const blob = new Blob(audioChunks, { type: mediaRecorder.mimeType || "audio/webm" });
           state.answers.audioBase64 = await blobToDataURL(blob);
           state.answers.audioMimeType = blob.type;
