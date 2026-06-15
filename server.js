@@ -85,7 +85,17 @@ async function groqChat(system, user) {
     })
   });
   const payload = await response.json();
-  if (!response.ok) throw new Error(payload?.error?.message || "Groq evaluation request failed.");
+  console.log("MIME:", mime);
+console.log("FILE SIZE:", bytes.length);
+console.log("GROQ RESPONSE:", JSON.stringify(payload));
+if (!response.ok) {
+  console.error("GROQ ERROR:", payload);
+  throw new Error(
+    payload?.error?.message ||
+    JSON.stringify(payload) ||
+    "Groq transcription request failed."
+  );
+}
   const content = payload?.choices?.[0]?.message?.content;
   if (!content) throw new Error("Groq returned an empty evaluation.");
   return JSON.parse(content);
