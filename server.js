@@ -85,9 +85,6 @@ async function groqChat(system, user) {
     })
   });
   const payload = await response.json();
-  console.log("MIME:", mime);
-console.log("FILE SIZE:", bytes.length);
-console.log("GROQ RESPONSE:", JSON.stringify(payload));
 if (!response.ok) {
   console.error("GROQ ERROR:", payload);
   throw new Error(
