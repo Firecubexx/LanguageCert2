@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Original exam-style practice for the LanguageCert General SELT (A2-C1) UKVI test.">
+  <title>SELT Mastery | General SELT UKVI Practice</title>
+  <style>
+    :root {
+      --navy: #101c36;
+      --navy-2: #172746;
+      --blue: #246bfd;
+      --blue-soft: #eaf1ff;
+      --cyan: #18a6b8;
+      --green: #11875d;
+      --green-soft: #e7f7f0;
+      --amber: #e99a16;
+      --amber-soft: #fff5df;
+      --red: #d74747;
+      --red-soft: #fff0f0;
+      --ink: #172033;
+      --muted: #68758c;
+      --line: #dce3ee;
+      --surface: #ffffff;
+      --page: #f4f7fb;
+      --shadow: 0 12px 30px rgba(16, 28, 54, .08);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background: var(--page);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    button, input, textarea, select { font: inherit; }
+    button { cursor: pointer; }
+    a { color: inherit; }
+    .hidden { display: none !important; }
+
+    .app-shell { min-height: 100vh; display: grid; grid-template-rows: 72px 1fr; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 0 28px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--navy), #142c55);
+      box-shadow: 0 3px 18px rgba(8, 17, 35, .22);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 220px; }
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: linear-gradient(135deg, #3a7cff, #1fc3c8);
+      font-weight: 900;
+      letter-spacing: -.04em;
+    }
+    .brand-copy strong { display: block; font-size: 17px; letter-spacing: -.02em; }
+    .brand-copy span { display: block; margin-top: 2px; color: #afbed7; font-size: 11px; }
+    .top-actions { display: flex; align-items: center; gap: 10px; }
+    .level-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 10px;
+      color: #d9e3f4;
+      font-size: 13px;
+    }
+    .level-chip select {
+      color: #fff;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      font-weight: 800;
+    }
+    .level-chip option { color: var(--ink); }
+    .icon-btn {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 10px;
+      color: white;
+      background: rgba(255,255,255,.06);
+    }
+
+    .body-grid { display: grid; grid-template-columns: 250px minmax(0, 1fr); }
+    .sidebar {
+      position: sticky;
+      top: 72px;
+      height: calc(100vh - 72px);
+      padding: 22px 16px;
+      overflow-y: auto;
+      color: #d7e0ef;
+      background: var(--navy);
+    }
+    .nav-label {
+      padding: 0 12px;
+      margin: 12px 0 8px;
+      color: #7184a4;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .nav-item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 5px;
+      padding: 11px 12px;
+      color: #c0cde0;
+      border: 0;
+      border-radius: 10px;
+      background: transparent;
+      text-align: left;
+      transition: .15s ease;
+    }
+    .nav-item:hover { color: #fff; background: rgba(255,255,255,.07); }
+    .nav-item.active {
+      color: #fff;
+      background: linear-gradient(90deg, rgba(36,107,253,.35), rgba(36,107,253,.08));
+      box-shadow: inset 3px 0 0 #65a0ff;
+    }
+    .nav-icon {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      flex: 0 0 auto;
+      place-items: center;
+      border-radius: 8px;
+      color: #fff;
+      background: rgba(255,255,255,.08);
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .nav-item.active .nav-icon { background: var(--blue); }
+    .side-note {
+      margin: 24px 8px 0;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 12px;
+      background: rgba(255,255,255,.04);
+      color: #96a8c3;
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .main-wrap { min-width: 0; display: flex; flex-direction: column; }
+    main { width: 100%; max-width: 1280px; margin: 0 auto; padding: 30px 34px 60px; flex: 1; }
+    .site-footer {
+      padding: 18px 28px;
+      color: #7b8799;
+      border-top: 1px solid var(--line);
+      background: #fff;
+      text-align: center;
+      font-size: 12px;
+    }
+    .site-footer strong { color: var(--navy); }
+
+    .page-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .eyebrow {
+      margin-bottom: 7px;
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 8px; color: var(--navy); font-size: clamp(28px, 4vw, 42px); letter-spacing: -.04em; }
+    h2 { margin-bottom: 8px; color: var(--navy); letter-spacing: -.025em; }
+    h3 { color: var(--navy); letter-spacing: -.015em; }
+    .lead { max-width: 780px; margin-bottom: 0; color: var(--muted); line-height: 1.65; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      gap: 24px;
+      min-height: 270px;
+      margin-bottom: 24px;
+      padding: 36px;
+      border-radius: 22px;
+      color: white;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(72,160,255,.38), transparent 26%),
+        radial-gradient(circle at 95% 88%, rgba(30,213,194,.25), transparent 28%),
+        linear-gradient(130deg, #101c36, #183a70);
+      box-shadow: var(--shadow);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -45px;
+      top: -70px;
+      width: 240px;
+      height: 240px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 50%;
+      box-shadow: 0 0 0 38px rgba(255,255,255,.025), 0 0 0 76px rgba(255,255,255,.02);
+    }
+    .hero-content { position: relative; z-index: 2; align-self: center; }
+    .hero .eyebrow { color: #74d8e3; }
+    .hero h1 { max-width: 700px; color: #fff; }
+    .hero p { max-width: 660px; color: #c4d1e5; line-height: 1.7; }
+    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+    .hero-stats {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      align-self: center;
+    }
+    .hero-stat {
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 15px;
+      background: rgba(255,255,255,.075);
+      backdrop-filter: blur(8px);
+    }
+    .hero-stat strong { display: block; font-size: 24px; }
+    .hero-stat span { color: #adbed7; font-size: 11px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 10px 17px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { color: #fff; background: var(--blue); box-shadow: 0 8px 18px rgba(36,107,253,.22); }
+    .btn-primary:hover { background: #155be8; }
+    .btn-light { color: var(--navy); background: #fff; }
+    .btn-outline { color: var(--navy); border-color: var(--line); background: #fff; }
+    .btn-ghost { color: #dce7f7; border-color: rgba(255,255,255,.2); background: rgba(255,255,255,.06); }
+    .btn-danger { color: var(--red); border-color: #f2caca; background: #fff; }
+    .btn:disabled { opacity: .48; cursor: not-allowed; transform: none; }
+
+    .section-title-row { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin: 28px 0 14px; }
+    .section-title-row h2 { margin: 0; font-size: 20px; }
+    .text-btn { padding: 0; border: 0; color: var(--blue); background: transparent; font-size: 12px; font-weight: 800; }
+
+    .skill-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .skill-card, .panel, .task-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 5px 16px rgba(16,28,54,.035);
+    }
+    .skill-card {
+      position: relative;
+      overflow: hidden;
+      padding: 20px;
+      transition: .16s ease;
+    }
+    .skill-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .skill-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: var(--skill); }
+    .skill-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 12px;
+      color: var(--skill);
+      background: color-mix(in srgb, var(--skill) 12%, white);
+      font-weight: 900;
+    }
+    .skill-card h3 { margin-bottom: 7px; }
+    .skill-card p { min-height: 52px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .mini-progress { height: 6px; overflow: hidden; border-radius: 8px; background: #edf1f6; }
+    .mini-progress span { display: block; height: 100%; border-radius: inherit; background: var(--skill); }
+    .skill-meta { display: flex; justify-content: space-between; margin: 8px 0 15px; color: var(--muted); font-size: 10px; }
+    .skill-links { display: flex; gap: 8px; }
+    .skill-links .btn { flex: 1; min-height: 36px; padding: 7px; font-size: 11px; }
+
+    .dashboard-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 18px; }
+    .panel { padding: 21px; }
+    .panel-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+    .panel-head h3 { margin: 0; }
+    .mock-banner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 24px;
+      color: #fff;
+      border: 0;
+      background: linear-gradient(130deg, #1f60d8, #314eaa);
+    }
+    .mock-banner h3 { color: #fff; }
+    .mock-banner p { margin: 0; color: #cfddf7; font-size: 12px; line-height: 1.6; }
+    .mock-specs { display: flex; gap: 14px; margin-top: 13px; color: #e6efff; font-size: 11px; font-weight: 700; }
+
+    .exam-map { display: grid; gap: 9px; }
+    .exam-row {
+      display: grid;
+      grid-template-columns: 42px minmax(0,1fr) auto;
+      gap: 12px;
+      align-items: center;
+      padding: 11px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+    }
+    .exam-num { width: 35px; height: 35px; display: grid; place-items: center; border-radius: 9px; color: var(--blue); background: var(--blue-soft); font-size: 11px; font-weight: 900; }
+    .exam-row strong { display: block; font-size: 12px; }
+    .exam-row span { color: var(--muted); font-size: 10px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      color: #526178;
+      background: #f0f3f7;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .tag.blue { color: var(--blue); background: var(--blue-soft); }
+    .tag.green { color: var(--green); background: var(--green-soft); }
+    .tag.amber { color: #a96800; background: var(--amber-soft); }
+
+    .task-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+    .task-card { padding: 20px; }
+    .task-top { display: flex; justify-content: space-between; gap: 14px; }
+    .task-number { color: var(--blue); font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .1em; }
+    .task-card h3 { margin: 8px 0 6px; font-size: 16px; }
+    .task-card p { min-height: 42px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .task-card .btn { width: 100%; margin-top: 8px; }
+
+    .exam-layout { display: grid; grid-template-columns: minmax(0,1fr) 280px; gap: 20px; align-items: start; }
+    .exam-paper {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .exam-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcfe;
+    }
+    .exam-header h2 { margin: 4px 0 5px; font-size: 21px; }
+    .exam-header p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .timer {
+      min-width: 102px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: var(--navy);
+      background: #fff;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+      font-weight: 900;
+    }
+    .timer.warn { color: var(--red); border-color: #f0bcbc; background: var(--red-soft); }
+    .exam-body { padding: 24px; }
+    .instruction {
+      margin-bottom: 20px;
+      padding: 13px 15px;
+      border-left: 4px solid var(--blue);
+      border-radius: 8px;
+      color: #43516a;
+      background: var(--blue-soft);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .source-box {
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #f9fafc;
+      white-space: pre-line;
+      line-height: 1.75;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 14px;
+    }
+    .audio-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+      padding: 14px;
+      border: 1px solid #cee5e9;
+      border-radius: 11px;
+      background: #f0fbfc;
+    }
+    .audio-box strong { display: block; color: #126d79; font-size: 12px; }
+    .audio-box span { color: #5f7d82; font-size: 10px; }
+    .audio-btn { min-width: 112px; color: #fff; border: 0; border-radius: 9px; padding: 9px 12px; background: var(--cyan); font-size: 11px; font-weight: 900; }
+
+    .question {
+      padding: 19px 0;
+      border-bottom: 1px solid #edf0f4;
+    }
+    .question:last-child { border-bottom: 0; }
+    .q-label { margin-bottom: 7px; color: var(--blue); font-size: 10px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .q-text { margin-bottom: 12px; color: var(--navy); font-size: 14px; font-weight: 750; line-height: 1.55; }
+    .options { display: grid; gap: 8px; }
+    .option {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      color: #36435a;
+      background: #fff;
+      font-size: 12px;
+      line-height: 1.5;
+      transition: .12s ease;
+    }
+    .option:hover { border-color: #9bb8ed; background: #f8faff; }
+    .option.selected { border-color: var(--blue); background: var(--blue-soft); }
+    .option.correct { border-color: #75c6a8; background: var(--green-soft); }
+    .option.incorrect { border-color: #e9a4a4; background: var(--red-soft); }
+    .option input { margin-top: 2px; accent-color: var(--blue); }
+    .short-input {
+      width: min(100%, 420px);
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      outline: 0;
+      color: var(--ink);
+      background: #fff;
+      font-size: 13px;
+    }
+    .short-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(36,107,253,.1); }
+    .short-input.correct { border-color: #75c6a8; background: var(--green-soft); }
+    .short-input.incorrect { border-color: #e9a4a4; background: var(--red-soft); }
+    .feedback { margin-top: 8px; font-size: 11px; line-height: 1.5; }
+    .feedback.good { color: var(--green); }
+    .feedback.bad { color: var(--red); }
+    .explanation { color: var(--muted); }
+    .exam-actions {
+      position: sticky;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 15px 24px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(8px);
+    }
+    .action-group { display: flex; gap: 9px; flex-wrap: wrap; }
+
+    .exam-side { position: sticky; top: 92px; display: grid; gap: 14px; }
+    .side-panel { padding: 17px; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: 0 5px 16px rgba(16,28,54,.04); }
+    .side-panel h3 { margin-bottom: 12px; font-size: 13px; }
+    .progress-line { height: 7px; overflow: hidden; border-radius: 8px; background: #edf1f6; }
+    .progress-line span { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), var(--cyan)); }
+    .side-meta { display: flex; justify-content: space-between; margin-top: 8px; color: var(--muted); font-size: 10px; }
+    .number-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+    .number-dot {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      color: var(--muted);
+      background: #fff;
+      font-size: 9px;
+      font-weight: 800;
+    }
+    .number-dot.done { color: #fff; border-color: var(--blue); background: var(--blue); }
+    .tips { margin: 0; padding-left: 17px; color: var(--muted); font-size: 10px; line-height: 1.65; }
+
+    textarea.answer-area {
+      width: 100%;
+      min-height: 300px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      outline: 0;
+      resize: vertical;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.7;
+    }
+    textarea.answer-area:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(36,107,253,.09); }
+    .writing-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 9px; color: var(--muted); font-size: 11px; }
+    .word-count.bad { color: var(--red); font-weight: 800; }
+    .word-count.good { color: var(--green); font-weight: 800; }
+    .rubric { display: grid; gap: 9px; margin-top: 18px; }
+    .rubric label { display: flex; gap: 9px; align-items: flex-start; padding: 10px; border: 1px solid var(--line); border-radius: 9px; color: #4e5c73; font-size: 11px; line-height: 1.55; }
+    .rubric input { margin-top: 2px; accent-color: var(--green); }
+    .speaking-prompt { padding: 22px; border: 1px solid var(--line); border-radius: 13px; background: #fafbfe; white-space: pre-line; line-height: 1.75; }
+    .big-timer { margin: 18px 0; color: var(--navy); font-size: 52px; font-weight: 900; text-align: center; font-variant-numeric: tabular-nums; letter-spacing: -.05em; }
+
+    .result-hero {
+      padding: 30px;
+      border-radius: 18px;
+      color: #fff;
+      background: linear-gradient(130deg, #104f3b, #168a68);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .score-ring {
+      width: 142px;
+      height: 142px;
+      display: grid;
+      place-items: center;
+      margin: 8px auto 18px;
+      border: 12px solid rgba(255,255,255,.18);
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 4px rgba(255,255,255,.1);
+    }
+    .score-ring strong { font-size: 36px; }
+    .result-hero h1 { margin-bottom: 7px; color: #fff; }
+    .result-hero p { color: #d3f0e6; }
+    .result-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; margin: 18px 0; }
+    .result-card { padding: 17px; border: 1px solid var(--line); border-radius: 13px; background: #fff; text-align: center; }
+    .result-card strong { display: block; color: var(--navy); font-size: 23px; }
+    .result-card span { color: var(--muted); font-size: 10px; }
+    .review-item { padding: 13px 0; border-bottom: 1px solid var(--line); }
+    .review-item:last-child { border-bottom: 0; }
+
+    .notice {
+      padding: 14px 16px;
+      border: 1px solid #f0d69f;
+      border-radius: 11px;
+      color: #75500c;
+      background: var(--amber-soft);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+    .mock-library { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
+    .mock-choice {
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #fff;
+      text-align: left;
+      transition: .15s ease;
+    }
+    .mock-choice:hover { transform: translateY(-2px); border-color: #9bb8ed; box-shadow: var(--shadow); }
+    .mock-choice strong { display: block; margin: 8px 0 5px; color: var(--navy); font-size: 14px; }
+    .mock-choice span { color: var(--muted); font-size: 10px; line-height: 1.5; }
+    .ai-actions { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; margin-top: 14px; }
+    .ai-status { color: var(--muted); font-size: 11px; }
+    .ai-report {
+      margin-top: 18px;
+      padding: 18px;
+      border: 1px solid #bdd7ff;
+      border-radius: 13px;
+      background: #f5f9ff;
+    }
+    .ai-score-row { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+    .ai-score {
+      width: 72px;
+      height: 72px;
+      display: grid;
+      flex: 0 0 auto;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      font-size: 21px;
+      font-weight: 900;
+    }
+    .ai-report h3 { margin: 0 0 4px; }
+    .ai-report p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .criteria-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 8px; margin: 13px 0; }
+    .criterion { padding: 9px 10px; border: 1px solid #d8e6fa; border-radius: 8px; background: #fff; font-size: 10px; }
+    .criterion strong { float: right; color: var(--blue); }
+    .feedback-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .feedback-box { padding: 12px; border-radius: 9px; background: #fff; }
+    .feedback-box h4 { margin: 0 0 7px; color: var(--navy); font-size: 11px; }
+    .feedback-box ul { margin: 0; padding-left: 17px; color: var(--muted); font-size: 10px; line-height: 1.55; }
+    .recording-panel { margin-top: 15px; padding: 15px; border: 1px solid #f0d69f; border-radius: 11px; background: var(--amber-soft); }
+    .recording-live { color: var(--red); font-weight: 900; }
+    .transcript-box { margin-top: 12px; padding: 13px; border: 1px solid var(--line); border-radius: 9px; background: #fff; color: #43516a; font-size: 11px; line-height: 1.65; white-space: pre-line; }
+    .mobile-nav { display: none; }
+
+    @media (max-width: 1050px) {
+      .skill-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: repeat(4,1fr); }
+      .dashboard-grid { grid-template-columns: 1fr; }
+      .exam-layout { grid-template-columns: 1fr; }
+      .exam-side { position: static; grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 760px) {
+      .app-shell { grid-template-rows: 64px 1fr; }
+      .topbar { height: 64px; padding: 0 15px; }
+      .brand-copy span, .level-chip span { display: none; }
+      .body-grid { display: block; }
+      .sidebar { display: none; }
+      main { padding: 20px 14px 80px; }
+      .hero { padding: 25px 20px; border-radius: 17px; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .skill-grid, .task-grid, .result-grid { grid-template-columns: 1fr; }
+      .mock-library, .criteria-grid, .feedback-cols { grid-template-columns: 1fr; }
+      .page-head, .exam-header { flex-direction: column; }
+      .timer { width: 100%; }
+      .exam-side { grid-template-columns: 1fr; }
+      .exam-body, .exam-header { padding: 18px; }
+      .exam-actions { padding: 13px 16px; }
+      .mobile-nav {
+        position: fixed;
+        z-index: 60;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 4px;
+        padding: 6px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(255,255,255,.96);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+      }
+      .mobile-nav button { padding: 8px 2px; border: 0; border-radius: 9px; color: var(--muted); background: transparent; font-size: 9px; font-weight: 800; }
+      .mobile-nav button.active { color: #fff; background: var(--blue); }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">SM</div>
+        <div class="brand-copy"><strong>SELT Mastery</strong><span>General SELT UKVI preparation</span></div>
+      </div>
+      <div class="top-actions">
+        <label class="level-chip"><span>Target</span>
+          <select id="levelSelect" aria-label="Target CEFR level">
+            <option value="B1">B1 · 40+</option>
+            <option value="B2" selected>B2 · 60+</option>
+            <option value="C1">C1 · 75+</option>
+          </select>
+        </label>
+        <button class="icon-btn" id="resetBtn" title="Reset saved progress" aria-label="Reset progress">↻</button>
+      </div>
+    </header>
+
+    <div class="body-grid">
+      <aside class="sidebar" id="sidebar"></aside>
+      <div class="main-wrap">
+        <main id="app"></main>
+        <footer class="site-footer"><strong>Copyright © 2026 Uttam Woli Sharma. All rights reserved.</strong><br>Developed by <strong>Uttam Woli Sharma</strong><br><span>Independent practice resource; not affiliated with or endorsed by LANGUAGECERT or UKVI.</span></footer>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav"></nav>
+  </div>
+
+  <script>
+    "use strict";
+
+    const OFFICIAL = {
+      listening: { minutes: 35, questions: 30, label: "30 questions · 4 parts" },
+      reading: { minutes: 50, questions: 30, label: "30 questions · 5 task groups" },
+      writing: { minutes: 45, questions: 2, label: "2 writing tasks" },
+      speaking: { minutes: 12, questions: 4, label: "4 interview parts" }
+    };
+    const FULL_MOCKS = [
+      { id:0, name:"Mock 1 · Foundation", seed:4101, focus:"Balanced everyday contexts" },
+      { id:1, name:"Mock 2 · Work & Study", seed:4102, focus:"Professional and education themes" },
+      { id:2, name:"Mock 3 · Community", seed:4103, focus:"Services, travel and local life" },
+      { id:3, name:"Mock 4 · Challenge", seed:4104, focus:"Denser reading and inference" },
+      { id:4, name:"Mock 5 · Accuracy", seed:4105, focus:"Vocabulary and detail focus" },
+      { id:5, name:"Mock 6 · Fluency", seed:4106, focus:"Extended writing and speaking" },
+      { id:6, name:"Mock 7 · Advanced", seed:4107, focus:"Higher-level language mix" },
+      { id:7, name:"Mock 8 · Final rehearsal", seed:4108, focus:"Complete exam-day simulation" }
+    ];
+
+    const SKILLS = {
+      listening: { title: "Listening", icon: "L", colour: "#18a6b8", desc: "Dialogues, conversations, note completion and group discussion." },
+      reading: { title: "Reading", icon: "R", colour: "#246bfd", desc: "Vocabulary, cloze, sentence insertion, matching and long text." },
+      writing: { title: "Writing", icon: "W", colour: "#8b5cf6", desc: "Formal responses and natural informal writing under time pressure." },
+      speaking: { title: "Speaking", icon: "S", colour: "#e99a16", desc: "Personal questions, role-plays, read aloud and presentation." }
+    };
+
+    const L1 = [
+      ["I thought the seminar started at nine.", ["So did I.", "Neither was it.", "It has started yesterday."], 0, "Agreement with a past belief is expressed with “So did I.”"],
+      ["Would you mind covering my shift on Saturday?", ["Yes, it was covered.", "I can do the morning.", "Saturday has a shift."], 1, "The speaker is making a request; the natural response offers a time."],
+      ["The printer has run out of paper again.", ["I will refill it.", "It printed the paper.", "There was no again."], 0, "The response offers an appropriate solution."],
+      ["I did not expect the journey to take so long.", ["The traffic was terrible.", "The journey expected it.", "It takes a train."], 0, "Heavy traffic logically explains the delay."],
+      ["Could I exchange this jacket without the receipt?", ["It depends on our returns policy.", "The jacket exchanges it.", "Your receipt is a jacket."], 0, "A shop assistant would refer to the returns policy."],
+      ["We may have to postpone the outdoor event.", ["Is the forecast still bad?", "The event was outdoors.", "We postponed yesterday."], 0, "The weather forecast is a likely reason to postpone an outdoor event."],
+      ["You have not seen my security pass, have you?", ["Try beside your laptop.", "It passes security.", "Yes, I have not."], 0, "This is a practical and natural response to someone looking for an item."],
+      ["The landlord says the repair could take a week.", ["Where will you stay meanwhile?", "The week repaired it.", "Landlords are a repair."], 0, "The response follows logically from a lengthy home repair."],
+      ["I am afraid the last bus has already left.", ["Then I will call a taxi.", "The bus was afraid.", "I left it last."], 0, "The speaker chooses a sensible alternative."],
+      ["Do you happen to know whether Marta accepted the offer?", ["She is still thinking about it.", "The offer happened.", "Marta knows whether."], 0, "The answer directly addresses whether a decision has been made."],
+      ["The figures in this report do not seem accurate.", ["I will check them against the database.", "The report has figures.", "Accuracy reported it."], 0, "Checking the source data is the appropriate response."],
+      ["Shall we bring the meeting forward to Tuesday?", ["I need to check everyone's availability.", "Tuesday brought it.", "The meeting is forward."], 0, "Availability must be checked before changing a meeting date."],
+      ["I hear you have been offered a promotion.", ["Yes, but it involves relocating.", "The offer can hear.", "Promotion was involved."], 0, "The answer confirms the news and adds relevant detail."],
+      ["The package should have arrived by now.", ["Let me look up the tracking number.", "It arrived a package.", "Now should be."], 0, "Tracking is the logical way to investigate a delayed package."]
+    ];
+
+    const L2 = [
+      {
+        title: "Community centre booking",
+        audio: "Woman: I would like to book the community hall for a family celebration on the eighteenth of July. Man: The main hall is already reserved that evening, but the garden room is free until ten. Woman: That may work. We expect about forty people. Man: The garden room holds fifty, although music must finish by half past nine. Woman: Fine. Could I visit tomorrow before I decide? Man: Certainly. I will be here from two until six.",
+        questions: [
+          ["Why can the woman not book the main hall?", ["It is too small.", "It is already reserved.", "It closes too early."], 1, "The man says the main hall is already reserved."],
+          ["What will the woman probably do next?", ["Visit the venue.", "Reduce the guest list.", "Change the date immediately."], 0, "She asks to visit before making her decision."]
+        ]
+      },
+      {
+        title: "Training course",
+        audio: "Man: Did you enrol on the first-aid course? Woman: I tried, but the Wednesday class was full. They offered me Friday instead. Man: That is the day of the stock check. Woman: I know. My manager said I could attend the morning session and return by two. Man: Good. The certificate will be useful when you apply for team leader.",
+        questions: [
+          ["Why did the woman choose Friday?", ["Her manager preferred it.", "The Wednesday course was full.", "It offered a better certificate."], 1, "Friday was the alternative because Wednesday had no places."],
+          ["Why does the man think the course is useful?", ["It may help her career.", "It replaces the stock check.", "It is only a morning course."], 0, "He links the certificate to a future team leader application."]
+        ]
+      },
+      {
+        title: "Rented flat",
+        audio: "Woman: How are you getting on in the new flat? Man: The location is perfect, and the neighbours are friendly. The only problem is the heating. It switches itself off every hour. Woman: Have you told the letting agent? Man: Twice. An engineer is finally coming on Thursday. Until then, they have lent me a portable heater.",
+        questions: [
+          ["What does the man like most about the flat?", ["The heating system.", "The letting agent.", "Its location."], 2, "He describes the location as perfect."],
+          ["What has the letting agent done?", ["Reduced the rent.", "Provided temporary equipment.", "Moved him to another flat."], 1, "They lent him a portable heater."]
+        ]
+      },
+      {
+        title: "Work presentation",
+        audio: "Man: Are you ready for tomorrow's presentation? Woman: Almost. I have shortened the introduction, but the sales chart still looks confusing. Man: Use percentages instead of the raw figures. The trend will be clearer. Woman: Good idea. Could you also listen while I practise the final section? Man: Of course, but I have a call in twenty minutes.",
+        questions: [
+          ["What does the man suggest changing?", ["The introduction.", "The way data is shown.", "The final conclusion."], 1, "He suggests using percentages instead of raw figures."],
+          ["What limits the time available to practise?", ["A phone call.", "A sales meeting.", "An unfinished chart."], 0, "The man has a call in twenty minutes."]
+        ]
+      },
+      {
+        title: "Dental appointment",
+        audio: "Receptionist: I am calling about your appointment with Dr Shah next Monday. We need to move it because she will be attending a conference. Patient: I can come on Tuesday afternoon, but not before three. Receptionist: There is a slot at three forty-five. Patient: That is fine. Will it still be at the Market Street clinic? Receptionist: Yes, please arrive ten minutes early.",
+        questions: [
+          ["Why is the appointment being changed?", ["The patient is working.", "The dentist will be away.", "The clinic is moving."], 1, "Dr Shah will be attending a conference."],
+          ["When should the patient arrive?", ["3:00", "3:35", "3:45"], 1, "The appointment is at 3:45 and the patient should arrive ten minutes early."]
+        ]
+      },
+      {
+        title: "Weekend trip",
+        audio: "Woman: The coastal train tickets are cheaper if we leave after ten. Man: But then we would miss the boat tour at midday. Woman: True. The earlier train costs twelve pounds more. Man: Let us take it. We rarely have a free weekend, and the weather is meant to be excellent. Woman: Agreed. I will book the train if you reserve the tour.",
+        questions: [
+          ["Why do they reject the later train?", ["It is more expensive.", "The weather may change.", "They would miss an activity."], 2, "The later train would make them miss the boat tour."],
+          ["What will the man do?", ["Book the boat tour.", "Pay for both tickets.", "Check the weather."], 0, "The woman asks him to reserve the tour."]
+        ]
+      },
+      {
+        title: "Café job",
+        audio: "Manager: Thanks for coming in, Leena. Your application says you worked in a bakery last summer. Applicant: Yes, mainly serving customers, although I sometimes helped prepare sandwiches. Manager: This role starts at six in the morning three days a week. Would transport be a problem? Applicant: No. I live nearby and usually cycle. Manager: Excellent. We will contact everyone by Friday.",
+        questions: [
+          ["What experience does Leena have?", ["Delivering food.", "Serving customers.", "Managing a bakery."], 1, "She mainly served customers."],
+          ["Why is the early start not a problem?", ["She owns a car.", "Buses start early.", "She lives close to the café."], 2, "She lives nearby and can cycle."]
+        ]
+      }
+    ];
+
+    const L3 = [
+      {
+        title: "Library induction",
+        audio: "Welcome to Westbridge Library. Your membership card allows you to borrow up to twelve items for three weeks. Books can be renewed online unless another reader has requested them. The quiet study room is on the second floor and must be booked at least one day in advance. Free computer sessions last forty-five minutes. Printing costs ten pence per black and white page. The library closes at eight on weekdays, but at five on Saturdays. Please speak to the information desk if you need help using the digital catalogue.",
+        notes: [
+          ["Maximum items:", ["twelve", "12"]], ["Loan period:", ["three weeks", "3 weeks"]],
+          ["Study room floor:", ["second floor", "2nd floor"]], ["Book study room:", ["one day in advance", "1 day in advance"]],
+          ["Computer session:", ["forty-five minutes", "45 minutes"]], ["Black and white printing:", ["ten pence", "10 pence", "10p"]],
+          ["Weekday closing time:", ["eight", "8", "8 pm", "eight pm"]]
+        ]
+      },
+      {
+        title: "Volunteer orientation",
+        audio: "Thank you for volunteering at the Riverside Food Project. Your first shift will begin at half past nine on Saturday morning. Please enter through the blue door beside the loading area and sign in with Maya. Wear comfortable closed shoes because the storeroom floor can be slippery. Most volunteers spend the first hour sorting fresh vegetables. At eleven, the team packs family boxes. Lunch is provided in the upstairs kitchen, but please bring your own water bottle. If you cannot attend, phone the office before six on Friday evening.",
+        notes: [
+          ["First shift begins:", ["half past nine", "9:30", "9.30"]], ["Entrance:", ["blue door"]],
+          ["Sign in with:", ["Maya"]], ["Footwear:", ["comfortable closed shoes", "closed shoes"]],
+          ["First task:", ["sorting fresh vegetables", "sort fresh vegetables"]], ["Boxes packed at:", ["eleven", "11", "11 am"]],
+          ["Bring:", ["water bottle", "your own water bottle"]]
+        ]
+      },
+      {
+        title: "Workplace wellness day",
+        audio: "Our annual wellness day takes place on the fourteenth of September at Greenway Conference Centre. Registration opens at eight forty-five in the main lobby. The opening talk, on managing stress, begins at nine thirty. After that, employees can choose between a nutrition workshop in room six and a practical session on desk exercises in the gym. A vegetarian lunch is included. Please tell Human Resources about any allergies by Monday. The afternoon walk has been cancelled because the riverside path is being repaired, so the day will now finish at four fifteen.",
+        notes: [
+          ["Date:", ["fourteenth of September", "14 September", "14th September"]], ["Registration:", ["eight forty-five", "8:45", "8.45"]],
+          ["Opening topic:", ["managing stress", "stress management"]], ["Nutrition workshop room:", ["room six", "room 6"]],
+          ["Lunch:", ["vegetarian lunch", "vegetarian"]], ["Report allergies to:", ["Human Resources", "HR"]],
+          ["Finishing time:", ["four fifteen", "4:15", "4.15"]]
+        ]
+      }
+    ];
+
+    const L4 = [
+      {
+        title: "Should the town centre become car-free?",
+        audio: "Host: The council is considering making the town centre car-free at weekends. Sara, you own a bookshop there. Sara: I support the idea in principle. When the high street closed for the summer festival, more people stopped to browse. But deliveries must still be allowed early in the morning. Daniel: As a resident, I am worried traffic will simply move into nearby streets. The council needs a proper plan, not just barriers. Mei: I travel in by bus, and the current service is unreliable. A car-free centre will only work if buses are more frequent and affordable. Sara: The council also needs to explain the change clearly. Some older customers assume they will not be able to reach us, although the proposal includes a shuttle from the main car park. Daniel: I had not heard about the shuttle. That would help, but I still want a trial period before anything becomes permanent. Mei: A six-month trial would give businesses time to measure sales and residents time to report problems.",
+        questions: [
+          ["Why does Sara partly support the proposal?", ["Her deliveries would become cheaper.", "A previous closure attracted browsers.", "She wants to move her shop."], 1, "She noticed more people browsing during a previous closure."],
+          ["What condition does Sara mention?", ["Early deliveries must remain possible.", "Parking must be free.", "The festival must return."], 0, "She says deliveries should be allowed early in the morning."],
+          ["What concerns Daniel most?", ["Noise from buses.", "Traffic moving to residential streets.", "The cost of new barriers."], 1, "He fears displaced traffic will affect nearby streets."],
+          ["According to Mei, what must improve?", ["The bus service.", "The main car park.", "Shop opening hours."], 0, "She wants buses to be more frequent and affordable."],
+          ["What information was new to Daniel?", ["There would be a shuttle bus.", "Businesses could vote.", "The closure would be daily."], 0, "He says he had not heard about the shuttle."],
+          ["What do Daniel and Mei agree about?", ["The plan should be tested first.", "The centre should remain open to cars.", "Residents should receive free parking."], 0, "Both support a trial period before a permanent change."]
+        ]
+      },
+      {
+        title: "Four-day working week",
+        audio: "Presenter: A local technology company has tested a four-day working week. Manager Alex: Staff worked the same total hours, but over four longer days. Productivity rose slightly and sick leave fell. However, customer support still had to operate on Fridays, so teams took different days off. Employee Priya: I valued the extra day, but the longer shifts were tiring, especially in winter. It was easier to arrange appointments, though, and I spent less on travel. Researcher Tom: Trials often succeed when companies redesign meetings and priorities. Simply squeezing five days of work into four can create stress. Alex: That is true. We cancelled two weekly meetings and introduced clearer handovers. Priya: Communication improved, but some parents found the later finishing time difficult. Tom: The lesson is that flexibility matters. One fixed model will not suit every organisation.",
+        questions: [
+          ["How were working hours organised?", ["Staff worked fewer total hours.", "Staff worked longer days.", "Everyone had Friday off."], 1, "The same total hours were spread over four longer days."],
+          ["What operational problem did the company face?", ["Customer support was needed on Fridays.", "Sick leave increased.", "Travel costs rose."], 0, "Support had to remain open on Fridays."],
+          ["What personal benefit does Priya mention?", ["Earlier finishing times.", "Lower travel spending.", "More winter daylight."], 1, "She spent less on travel."],
+          ["What warning does Tom give?", ["Meetings should become longer.", "Compressed work can create stress.", "Productivity always falls."], 1, "He warns against simply squeezing five days into four."],
+          ["What did the company change?", ["Its office location.", "Its handover process.", "Its customer prices."], 1, "It introduced clearer handovers."],
+          ["What is Tom's final view?", ["Every company should use the same model.", "Trials should end after one month.", "Arrangements should suit the organisation."], 2, "He concludes that one fixed model will not suit everyone."]
+        ]
+      }
+    ];
+
+    const R1A = [
+      ["The manager asked us to <mark>retain</mark> all receipts.", ["keep", "copy", "send"], 0, "Retain means keep."],
+      ["The new timetable is only <mark>provisional</mark>.", ["temporary", "detailed", "popular"], 0, "Provisional means not yet final."],
+      ["The company aims to <mark>reduce</mark> unnecessary waste.", ["measure", "cut", "collect"], 1, "Reduce means make less or cut."],
+      ["Please <mark>notify</mark> reception if you will arrive late.", ["inform", "visit", "thank"], 0, "Notify means inform."],
+      ["The museum has <mark>acquired</mark> several rare photographs.", ["displayed", "obtained", "repaired"], 1, "Acquired means obtained."],
+      ["Her explanation was clear and <mark>concise</mark>.", ["brief", "formal", "unusual"], 0, "Concise means brief but clear."],
+      ["The roadworks caused a <mark>substantial</mark> delay.", ["minor", "considerable", "regular"], 1, "Substantial means large or considerable."],
+      ["Staff are encouraged to <mark>participate</mark> in the survey.", ["take part", "take notes", "take leave"], 0, "Participate means take part."],
+      ["The equipment must be inspected at <mark>regular</mark> intervals.", ["frequent", "fixed", "random"], 1, "Regular intervals are fixed or evenly spaced."],
+      ["The charity is seeking a <mark>suitable</mark> venue.", ["available", "appropriate", "central"], 1, "Suitable means appropriate for the purpose."],
+      ["The council will <mark>allocate</mark> funds to the project.", ["assign", "borrow", "refund"], 0, "Allocate means assign for a purpose."],
+      ["The changes are expected to be <mark>beneficial</mark>.", ["helpful", "expensive", "permanent"], 0, "Beneficial means producing a good result."],
+      ["We need to <mark>verify</mark> the applicant's address.", ["change", "confirm", "publish"], 1, "Verify means confirm that something is true."],
+      ["The shop has an <mark>extensive</mark> range of tools.", ["wide", "cheap", "modern"], 0, "Extensive means covering a wide range."],
+      ["Attendance at the safety briefing is <mark>mandatory</mark>.", ["recommended", "recorded", "required"], 2, "Mandatory means required."]
+    ];
+
+    const CLOZE = [
+      {
+        title: "Starting a new role",
+        text: "On my first day at the design studio, I was understandably [1] about remembering everyone's name. Fortunately, my supervisor gave me a short tour and explained how the team [2] projects. I was then asked to observe a client meeting, which helped me [3] how decisions were made. By lunchtime, I already felt more [4]. The day ended with a planning session, and I left feeling [5] that I had made the right career move.",
+        gaps: [
+          [["nervous","ordinary","equal"],0], [["managed","escaped","removed"],0], [["understand","refuse","prevent"],0], [["settled","hidden","limited"],0], [["confident","separate","silent"],0]
+        ]
+      },
+      {
+        title: "Repair café",
+        text: "The repair café was set up to stop useful household items being thrown [1]. Volunteers with practical skills examine broken lamps, radios and small appliances. Visitors are encouraged to watch the repair so that they can [2] basic techniques. There is no fixed charge, although people may make a [3] towards running costs. Not every object can be saved, but the project has already [4] hundreds of items from landfill and has helped neighbours get to [5] one another.",
+        gaps: [
+          [["away","through","across"],0], [["learn","cause","avoid"],0], [["donation","salary","rent"],0], [["diverted","invited","delivered"],0], [["know","believe","expect"],0]
+        ]
+      },
+      {
+        title: "Flexible tickets",
+        text: "The theatre has introduced a flexible ticket scheme for people whose working hours frequently [1]. Customers can exchange their seat for another performance, [2] they contact the box office at least twenty-four hours beforehand. The scheme does not [3] to discounted group bookings. Management hopes it will make live performances more [4] to shift workers, while also reducing the number of empty seats. Early feedback has been extremely [5].",
+        gaps: [
+          [["vary","return","divide"],0], [["provided","despite","whereas"],0], [["apply","arrive","attach"],0], [["accessible","accurate","responsible"],0], [["positive","narrow","private"],0]
+        ]
+      }
+    ];
+
+    const INSERTION = [
+      {
+        title: "A garden above the station",
+        paragraphs: [
+          "When the old central station was rebuilt, most residents expected another glass-and-steel transport hub. [1] The roof now holds a public garden containing more than 2,000 plants.",
+          "The idea came from architect Lena Morris, who had seen similar projects abroad. [2] Engineers first had to prove that the structure could carry the extra weight of wet soil.",
+          "The garden opened last spring and can be reached by a lift from the main concourse. [3] Office workers use it at lunchtime, while families tend to visit at weekends.",
+          "Maintaining plants above a busy station creates unusual challenges. [4] As a result, the gardeners chose species that can survive both strong sun and periods of limited water.",
+          "The project has also created habitats for insects and birds. [5] Researchers from the local university are now monitoring which species appear.",
+          "Perhaps the most unexpected benefit is the change in people's attitude to the station itself. [6] It has become a place where some passengers deliberately choose to spend time."
+        ],
+        sentences: [
+          "A. Instead, the final plans included something few people had imagined.",
+          "B. The site is exposed to wind and has no natural shade.",
+          "C. Entry is free, and the space stays open until early evening.",
+          "D. Before construction began, however, the proposal faced a practical test.",
+          "E. Small nesting boxes have been fitted along the quieter eastern edge.",
+          "F. Previously, most people hurried through the building as quickly as possible.",
+          "G. Ticket sales have therefore risen on every regional route.",
+          "H. The original station garden was removed over a century ago."
+        ],
+        answers: [0,3,2,1,4,5]
+      },
+      {
+        title: "The return of the night train",
+        paragraphs: [
+          "For years, overnight rail travel seemed to be disappearing from Europe. [1] Several new services have recently opened, and older routes have been restored.",
+          "One reason is that travellers are reconsidering short flights. [2] A night train can replace both a flight and a hotel stay.",
+          "Modern sleeping carriages are also different from those many passengers remember. [3] Some even include private showers and reliable wireless internet.",
+          "Running an international night service remains complicated. [4] Operators must coordinate track access, staff and safety rules across several countries.",
+          "Tickets can also appear expensive when compared with budget airline fares. [5] Supporters argue that the correct comparison should include airport transfers and accommodation.",
+          "Demand currently exceeds supply on many routes. [6] Rail companies are ordering new carriages, but these take years to design and build."
+        ],
+        sentences: [
+          "A. This is partly because people are more aware of the environmental cost.",
+          "B. Passengers may choose compact private rooms rather than shared compartments.",
+          "C. Yet the trend has now begun to reverse.",
+          "D. As a result, popular departures often sell out weeks ahead.",
+          "E. The trains rarely cross national borders.",
+          "F. Each railway network has its own timetable and technical requirements.",
+          "G. That comparison does not always reflect the full cost of a journey.",
+          "H. Most passengers use the service only for business."
+        ],
+        answers: [2,0,1,5,6,3]
+      }
+    ];
+
+    const MATCHING = [
+      {
+        title: "Four people choose a local class",
+        texts: [
+          "A · Nina: I wanted an activity that took me away from screens. The pottery class is slow and practical, and I like leaving each week with something I have made. I did not expect the atmosphere to be so social.",
+          "B · Omar: I joined conversational Spanish because several colleagues speak it. The teacher rarely uses a textbook. We practise situations such as ordering food and asking for directions, which suits me.",
+          "C · Grace: My doctor suggested gentle exercise after a knee injury. The swimming coach adapts every activity, so I never feel pushed beyond what is comfortable. My confidence has returned.",
+          "D · Leo: I chose evening photography because I work during the day. We often meet outdoors rather than in a classroom. The technical side is useful, but learning to notice light has changed how I see ordinary places."
+        ],
+        questions: [
+          ["Who values producing a physical object?",0], ["Who wanted skills for communication with people they know?",1],
+          ["Who joined for a health-related reason?",2], ["Who appreciates flexible support from the teacher?",2],
+          ["Who needed a course outside working hours?",3], ["Who was surprised by the social benefit?",0],
+          ["Who says the class changed their way of observing things?",3]
+        ]
+      },
+      {
+        title: "Four reviews of shared workspaces",
+        texts: [
+          "A · Harbour Desk: The sea view is impressive, but the real advantage is the staff. When my video call failed, they found me another room immediately. It is not the cheapest option.",
+          "B · Junction Works: This space is beside the railway station and stays open all night. The desks are basic, but membership includes secure lockers and unlimited printing.",
+          "C · The Green Room: Plants and natural materials make this a calm place to work. Phone calls are restricted to two soundproof booths, so it suits people who need concentration.",
+          "D · Foundry Hub: Most members run small creative businesses. Weekly breakfasts make it easy to exchange advice, and I found my current accountant through someone I met there."
+        ],
+        questions: [
+          ["Which place is best for someone working very late?",1], ["Which reviewer praises quick problem-solving?",0],
+          ["Which space limits where members can make calls?",2], ["Which place helped a member find professional support?",3],
+          ["Which option includes storage?",1], ["Which is particularly suitable for focused quiet work?",2],
+          ["Which reviewer accepts a higher price for good service?",0]
+        ]
+      }
+    ];
+
+    const LONG_READS = [
+      {
+        title: "Why libraries are lending more than books",
+        text: `Public libraries have always adapted to the needs of their communities. In recent years, some have begun lending objects that people need only occasionally: drills, sewing machines, camping equipment and even musical instruments. These collections are often known as “libraries of things”.
+
+The idea is partly economic. A high-quality tool may be too expensive for a person who needs it for one small repair. Borrowing also reduces the number of rarely used objects stored in homes. Environmental groups support the model because sharing can reduce both manufacturing demand and waste.
+
+Setting up such a service is not as simple as placing a few tools on a shelf. Staff must decide which items are useful, safe and reasonably easy to maintain. Electrical equipment may need inspection after every loan. Clear instructions are essential, and some libraries require borrowers to attend a short demonstration before using specialist items.
+
+The schemes can also strengthen communities. At one library in the north of England, volunteers run monthly repair sessions alongside the lending service. People arrive with broken belongings, learn practical skills and often stay to help others. The library has become a meeting place for residents who might not otherwise speak to one another.
+
+There are limits. Popular objects may have long waiting lists, while unusual donations can cost more to store than they are worth. Insurance rules vary, and not every library building has suitable space. Even so, demand is growing. Supporters do not claim that sharing will replace ownership, but they believe it can make access to useful equipment fairer and more sustainable.`,
+        questions: [
+          ["What is the main purpose of the first paragraph?", ["To criticise traditional libraries", "To introduce a newer lending service", "To describe how books are selected", "To compare public and private libraries"], 1, "It introduces libraries lending useful objects."],
+          ["Why do environmental groups support libraries of things?", ["They create manufacturing jobs.", "They make homes larger.", "They may reduce production and waste.", "They prevent all private ownership."], 2, "Sharing can lower manufacturing demand and waste."],
+          ["What is one challenge for library staff?", ["Teaching every borrower advanced repair skills", "Keeping equipment safe and maintained", "Persuading people to donate books", "Opening a new building"], 1, "The text stresses inspection, maintenance and instructions."],
+          ["What happened at the library in northern England?", ["Its repair sessions encouraged community contact.", "It stopped lending tools.", "It employed environmental inspectors.", "It sold repaired objects."], 0, "The sessions became a social meeting point."],
+          ["What does the writer say about unusual donations?", ["They are always the most popular.", "They may create storage costs.", "They cannot be insured.", "They should be sent to museums."], 1, "Some unusual donations cost more to store than they are worth."],
+          ["What is the writer's overall view?", ["The idea has potential despite practical limits.", "The service should replace book lending.", "Only large libraries can benefit.", "Demand is likely to disappear."], 0, "The conclusion is balanced but broadly positive."]
+        ]
+      },
+      {
+        title: "The hidden value of the daily journey",
+        text: `Working from home has removed the daily commute for many employees, saving time and money. Yet researchers have begun to ask whether the journey between home and work served a psychological purpose that was easy to overlook.
+
+For some people, commuting created a boundary between professional and private life. The walk to a station or drive home provided time to process the day. Without that transition, workers may close a laptop and immediately face household responsibilities, while thoughts about unfinished tasks remain active.
+
+This does not mean long or crowded journeys are desirable. Commutes of more than an hour are consistently linked with lower life satisfaction. The useful element appears to be the transition itself, not the delay, expense or discomfort.
+
+Some remote workers have therefore invented a “fake commute”. They take a short walk before beginning work and repeat it at the end of the day. Others change clothes, listen to a particular podcast or tidy their desk. These routines signal that one role is ending and another is beginning.
+
+Employers can help by avoiding messages outside agreed hours and by judging performance through results rather than constant online visibility. Individuals, meanwhile, may need to experiment. A routine that helps one person switch off may feel artificial to another.
+
+The broader lesson is that removing an inconvenience can also remove a useful structure. Instead of recreating the old commute exactly, remote workers can design a shorter, healthier transition that offers the same mental separation.`,
+        questions: [
+          ["What issue is introduced in the first paragraph?", ["Home working may have removed a useful transition.", "Researchers want everyone to return to offices.", "Travel costs have increased.", "Employees miss public transport."], 0, "The paragraph questions whether commuting had an overlooked psychological role."],
+          ["Why can ending work at home be difficult?", ["Household tasks are always more complex.", "There may be no clear boundary between roles.", "Laptops take longer to close.", "Managers require evening meetings."], 1, "The physical and mental transition may be missing."],
+          ["What does the writer say about long commutes?", ["They improve life satisfaction.", "Their benefit comes from discomfort.", "They are not being recommended.", "They are useful only for drivers."], 2, "The text clearly says long, crowded journeys are not desirable."],
+          ["What is a “fake commute”?", ["Pretending to travel during an online meeting", "A short routine marking the start and end of work", "Claiming travel expenses while at home", "Using a virtual office background"], 1, "It is a deliberately created transition routine."],
+          ["How can employers support boundaries?", ["Monitor workers continuously.", "Send more evening reminders.", "Focus on outcomes and respect hours.", "Require identical routines."], 2, "The text recommends respecting hours and judging results."],
+          ["What is the final recommendation?", ["Recreate the old journey in full.", "Move closer to the office.", "Design a personal, healthier transition.", "Avoid routines because they feel artificial."], 2, "The conclusion recommends a shorter personal transition."]
+        ]
+      }
+    ];
+
+    const WRITING = {
+      formal: [
+        "You recently attended a short professional training course. The organiser has asked for feedback.\n\nWrite an email to the organiser. In your email:\n• explain which parts were useful\n• describe one problem you experienced\n• suggest one improvement for future courses",
+        "Your local council plans to close a public sports centre for six months.\n\nWrite to the council. In your letter:\n• explain how you use the centre\n• describe how the closure will affect local people\n• suggest a temporary alternative",
+        "You ordered furniture online, but the delivery did not match the description.\n\nWrite to the company. In your email:\n• describe what you ordered\n• explain what was wrong with the delivery\n• state what action you expect",
+        "Your workplace is considering changing staff working hours.\n\nWrite to your manager. In your email:\n• give your opinion of the proposed change\n• explain how it may affect staff and customers\n• recommend a practical arrangement",
+        "A community organisation is offering a grant for local improvement projects.\n\nWrite an application. In your response:\n• describe the improvement you propose\n• explain who would benefit\n• show how the money would be used",
+        "You stayed at a hotel during a work trip and were dissatisfied with the service.\n\nWrite to the hotel manager. In your email:\n• describe the problems\n• explain how they affected your stay\n• say what response you would consider fair"
+      ],
+      informal: [
+        "A friend is thinking about moving to your area. Write a message describing the area, explaining its advantages and disadvantages, and offering advice about finding somewhere to live.",
+        "Write to a friend about a new responsibility you have taken on. Explain what it involves, describe the biggest challenge, and say what you have learned so far.",
+        "A friend invited you to an important celebration, but you cannot attend. Write a message explaining why, showing that you understand why the event matters, and suggesting another way to celebrate together.",
+        "Write a story beginning with: “By the time I noticed the envelope, everyone else had left the building.”",
+        "Write to a friend who is feeling nervous about starting a new job. Share a similar experience, explain what helped you, and give practical advice.",
+        "Describe a day when a plan went wrong but the result was unexpectedly positive. Explain what happened, how people reacted and why you remember it."
+      ]
+    };
+
+    const SPEAKING = {
+      personal: [
+        "What do you enjoy most about the place where you live?\nWhat skill have you learned recently?\nHow do you normally organise a busy week?\nTell me about a person who has influenced you.\nDo you prefer planning holidays carefully or deciding as you go?",
+        "What kind of work would you like to do in the future?\nHow important is exercise in your life?\nTell me about a useful piece of technology you own.\nWhat makes a good neighbour?\nHow do you usually learn about current events?",
+        "Describe a typical weekend in your life.\nWhat is something you would like to improve about your local area?\nTell me about a time you helped someone.\nDo you prefer shopping online or in person?\nWhat is the best way to learn a language?"
+      ],
+      roleplay: [
+        "Situation 1: You bought a monthly travel pass, but it stopped working after three days. Speak to the customer service assistant. Explain the problem, answer questions and ask for a solution.\n\nSituation 2: You share an office. A colleague regularly holds loud video calls beside your desk. Explain the effect on your work and negotiate a practical arrangement.",
+        "Situation 1: You reserved a table for a family meal, but the restaurant has no record of the booking. Explain what you booked and ask what can be done.\n\nSituation 2: Your manager asks you to work this weekend at short notice. You have an important commitment. Respond politely, explain the situation and offer an alternative.",
+        "Situation 1: A neighbour's building work starts very early each morning. Discuss the issue and agree on acceptable hours.\n\nSituation 2: You joined a gym because it advertised evening classes, but most have been cancelled. Speak to the manager and request action."
+      ],
+      readaloud: [
+        "The council's new cycle scheme will begin next month. Residents can hire bicycles from twelve stations across the town. The first thirty minutes of each journey will be free, and discounted annual membership will be available to local students. Users are advised to check the bicycle carefully before leaving a station.",
+        "Small changes to a workplace can make it easier for everyone to concentrate. Natural light, quiet areas and clearly planned meeting times may reduce unnecessary interruption. However, employees have different needs, so managers should ask staff for feedback before introducing permanent changes.",
+        "Visitors to the nature reserve should remain on marked paths during the nesting season. Dogs must be kept on leads, and all litter should be taken home. The visitor centre provides maps, drinking water and information about guided walks. Entry to the reserve is free throughout the year."
+      ],
+      presentation: [
+        "Talk about a change that improved your daily life.\n\nYou should say:\n• what the change was\n• why you made it\n• what difficulties you faced\n• why it has been helpful",
+        "Talk about a public service that is important in your community.\n\nYou should say:\n• what the service provides\n• who uses it\n• what it does well\n• how it could be improved",
+        "Talk about a decision that required careful thought.\n\nYou should say:\n• what the decision concerned\n• what choices you had\n• who or what helped you decide\n• whether you are satisfied with the result",
+        "Talk about a skill that more people should learn.\n\nYou should say:\n• what the skill is\n• why it matters\n• how people can learn it\n• how society would benefit"
+      ]
+    };
+
+    const PRACTICE_TASKS = {
+      listening: [
+        { id: "l1", title: "Part 1 · Dialogue completions", meta: "7 questions", desc: "Choose the most natural completion to a short unfinished exchange." },
+        { id: "l2", title: "Part 2 · Conversations", meta: "10 questions", desc: "Listen for purpose, detail, attitude and intended next action." },
+        { id: "l3", title: "Part 3 · Note completion", meta: "7 questions", desc: "Complete notes using no more than three words." },
+        { id: "l4", title: "Part 4 · Group discussion", meta: "6 questions", desc: "Follow views, agreement, reasons and changes of opinion." }
+      ],
+      reading: [
+        { id: "r1a", title: "Part 1a · Vocabulary in context", meta: "6 questions", desc: "Replace a highlighted word without changing the sentence meaning." },
+        { id: "r1b", title: "Part 1b · Gapped text", meta: "5 questions", desc: "Select the word that fits grammar, meaning and collocation." },
+        { id: "r2", title: "Part 2 · Missing sentences", meta: "6 questions", desc: "Restore cohesion by placing sentences into a text." },
+        { id: "r3", title: "Part 3 · Multiple matching", meta: "7 questions", desc: "Identify which short text contains specific information." },
+        { id: "r4", title: "Part 4 · Long text", meta: "6 questions", desc: "Read for purpose, detail, inference and writer position." }
+      ],
+      writing: [
+        { id: "w1", title: "Part 1 · Formal response", meta: "100–150 words", desc: "Respond appropriately to a situation for a public or professional reader." },
+        { id: "w2", title: "Part 2 · Informal writing", meta: "150–200 words", desc: "Write naturally for a clear purpose and familiar audience." }
+      ],
+      speaking: [
+        { id: "s1", title: "Part 1 · Personal questions", meta: "Up to 5 questions", desc: "Develop natural answers across different everyday topics." },
+        { id: "s2", title: "Part 2 · Two role-plays", meta: "Interaction", desc: "Respond, ask questions, clarify and reach an outcome." },
+        { id: "s3", title: "Part 3 · Read aloud", meta: "Text + questions", desc: "Read clearly, then respond to questions about the text." },
+        { id: "s4", title: "Part 4 · Presentation", meta: "30s prep · 1–2 min", desc: "Organise an extended response and answer follow-up questions." }
+      ]
+    };
+
+    const defaultState = {
+      view: "home",
+      skill: null,
+      mode: "practice",
+      taskId: null,
+      variant: 0,
+      answers: {},
+      checked: false,
+      timer: null,
+      timerId: null,
+      mock: null,
+      history: [],
+      completed: {},
+      target: "B2"
+    };
+    let state = loadState();
+    let mediaRecorder = null;
+    let mediaStream = null;
+    let audioChunks = [];
+    let recordingStartedAt = 0;
+
+    function loadState() {
+      try {
+        const saved = JSON.parse(localStorage.getItem("seltMasteryState") || "null");
+        return saved ? { ...defaultState, ...saved, timerId: null, timer: null, checked: false, answers: {}, mock: null } : { ...defaultState };
+      } catch (_) { return { ...defaultState }; }
+    }
+    function saveState() {
+      const clean = { ...state, timerId: null, timer: null, answers: {}, checked: false, mock: null };
+      localStorage.setItem("seltMasteryState", JSON.stringify(clean));
+    }
+    function esc(value) {
+      return String(value ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
+    }
+    function shuffle(arr, seed = Date.now()) {
+      const copy = arr.slice();
+      let x = Math.abs(seed) + 1;
+      for (let i = copy.length - 1; i > 0; i--) {
+        x = (x * 9301 + 49297) % 233280;
+        const j = Math.floor((x / 233280) * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+    function fmt(seconds) {
+      const s = Math.max(0, seconds || 0);
+      return `${String(Math.floor(s / 60)).padStart(2,"0")}:${String(s % 60).padStart(2,"0")}`;
+    }
+    function normalise(value) {
+      return String(value || "").toLowerCase().trim().replace(/[.,!?']/g, "").replace(/\s+/g, " ");
+    }
+    function answerMatches(value, accepted) {
+      const v = normalise(value);
+      return accepted.some(a => normalise(a) === v);
+    }
+    function wordCount(text) { return String(text || "").trim().split(/\s+/).filter(Boolean).length; }
+
+    async function apiPost(path, body) {
+      if (!/^https?:$/.test(location.protocol)) {
+        throw new Error("AI evaluation requires the local server. Run start-selt.ps1 and open http://127.0.0.1:8765.");
+      }
+      const response = await fetch(path, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(payload.error || `Request failed (${response.status}).`);
+      return payload;
+    }
+
+    function blobToDataURL(blob) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+    }
+
+    async function evaluateWritingWithAI(task, button) {
+      button.disabled = true;
+      button.textContent = "AI examiner is reviewing...";
+      const status = document.getElementById("aiStatus");
+      if (status) status.textContent = "Sending securely through the local server.";
+      try {
+        const payload = await apiPost("/api/evaluate-writing", {
+          prompt: task.prompt,
+          response: state.answers.text || "",
+          wordCount: wordCount(state.answers.text),
+          target: state.target
+        });
+        state.answers.aiEvaluation = payload.evaluation;
+        state.answers.aiError = "";
+        if (state.view === "mock") state.mock.answers[state.mock.step] = { ...state.answers };
+      } catch (error) {
+        state.answers.aiError = error.message;
+      }
+      render();
+    }
+
+    async function toggleSpeakingRecording(button) {
+      if (mediaRecorder && mediaRecorder.state === "recording") {
+        mediaRecorder.stop();
+        button.disabled = true;
+        button.textContent = "Preparing recording...";
+        return;
+      }
+      try {
+        mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const preferred = ["audio/webm;codecs=opus","audio/webm","audio/ogg;codecs=opus"].find(type => MediaRecorder.isTypeSupported(type));
+        mediaRecorder = new MediaRecorder(mediaStream, preferred ? { mimeType: preferred } : undefined);
+        audioChunks = [];
+        recordingStartedAt = Date.now();
+        mediaRecorder.ondataavailable = event => { if (event.data.size) audioChunks.push(event.data); };
+        mediaRecorder.onstop = async () => {
+          const blob = new Blob(audioChunks, { type: mediaRecorder.mimeType || "audio/webm" });
+          state.answers.audioBase64 = await blobToDataURL(blob);
+          state.answers.audioMimeType = blob.type;
+          state.answers.audioDuration = Math.max(1, Math.round((Date.now() - recordingStartedAt) / 1000));
+          state.answers.recording = false;
+          state.answers.transcript = "";
+          state.answers.aiEvaluation = null;
+          mediaStream?.getTracks().forEach(track => track.stop());
+          mediaRecorder = null;
+          mediaStream = null;
+          if (state.view === "mock") state.mock.answers[state.mock.step] = { ...state.answers };
+          render();
+        };
+        state.answers.recording = true;
+        mediaRecorder.start(250);
+        button.textContent = "Stop recording";
+        button.classList.add("recording-live");
+        const status = document.getElementById("aiStatus");
+        if (status) status.textContent = "Recording now. Speak naturally and complete the task.";
+      } catch (error) {
+        state.answers.aiError = error.name === "NotAllowedError" ? "Microphone permission was not granted." : error.message;
+        render();
+      }
+    }
+
+    async function evaluateSpeakingWithAI(task, button) {
+      button.disabled = true;
+      button.textContent = "Transcribing...";
+      const status = document.getElementById("aiStatus");
+      if (status) status.textContent = "Uploading the recording securely to the local server.";
+      try {
+        const transcription = await apiPost("/api/transcribe-speaking", {
+          audio: state.answers.audioBase64,
+          mimeType: state.answers.audioMimeType
+        });
+        state.answers.transcript = transcription.transcript;
+        button.textContent = "AI examiner is reviewing...";
+        if (status) status.textContent = "Transcript ready. Creating examiner feedback.";
+        const scored = await apiPost("/api/evaluate-speaking", {
+          prompt: task.prompt,
+          transcript: state.answers.transcript,
+          duration: state.answers.audioDuration,
+          target: state.target
+        });
+        state.answers.aiEvaluation = scored.evaluation;
+        state.answers.aiError = "";
+        state.answers.reviewed = true;
+        if (state.view === "mock") state.mock.answers[state.mock.step] = { ...state.answers };
+      } catch (error) {
+        state.answers.aiError = error.message;
+      }
+      render();
+    }
+
+    function navHTML() {
+      const items = [
+        ["home","⌂","Dashboard"], ["listening","L","Listening"], ["reading","R","Reading"],
+        ["writing","W","Writing"], ["speaking","S","Speaking"], ["fullmock","M","Full mock"]
+      ];
+      return `
+        <div class="nav-label">Study</div>
+        ${items.slice(0,5).map(([key,icon,label]) => `<button class="nav-item ${navActive(key) ? "active" : ""}" data-nav="${key}"><span class="nav-icon">${icon}</span>${label}</button>`).join("")}
+        <div class="nav-label">Simulation</div>
+        ${items.slice(5).map(([key,icon,label]) => `<button class="nav-item ${navActive(key) ? "active" : ""}" data-nav="${key}"><span class="nav-icon">${icon}</span>${label}</button>`).join("")}
+        <div class="nav-label">Information</div>
+        <button class="nav-item ${state.view === "format" ? "active" : ""}" data-nav="format"><span class="nav-icon">i</span>Exam format</button>
+        <div class="side-note">All practice questions are original and modelled on the published General SELT task structure. For official past papers, use LanguageCert's preparation page.</div>`;
+    }
+    function mobileNavHTML() {
+      return [["home","Home"],["listening","Listen"],["reading","Read"],["writing","Write"],["speaking","Speak"]]
+        .map(([k,l]) => `<button class="${navActive(k) ? "active" : ""}" data-nav="${k}">${l}</button>`).join("");
+    }
+    function navActive(key) {
+      if (key === "home") return state.view === "home";
+      if (key === "fullmock") return state.view === "mock" && state.mode === "full";
+      return state.skill === key && ["skill","task","mock","results"].includes(state.view);
+    }
+
+    function render() {
+      clearTimer(false);
+      document.getElementById("sidebar").innerHTML = navHTML();
+      document.getElementById("mobileNav").innerHTML = mobileNavHTML();
+      document.getElementById("levelSelect").value = state.target;
+      let html = "";
+      if (state.view === "home") html = renderHome();
+      else if (state.view === "skill") html = renderSkill();
+      else if (state.view === "task") html = renderTask();
+      else if (state.view === "mock") html = renderMock();
+      else if (state.view === "results") html = renderResults();
+      else if (state.view === "format") html = renderFormat();
+      document.getElementById("app").innerHTML = html;
+      bindEvents();
+      if ((state.view === "task" || state.view === "mock") && state.timer !== null) startTimerTick();
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+
+    function completedCount(skill) {
+      return PRACTICE_TASKS[skill].filter(t => state.completed[`${skill}:${t.id}`]).length;
+    }
+    function renderHome() {
+      const totalDone = Object.keys(state.completed).length;
+      return `
+        <section class="hero">
+          <div class="hero-content">
+            <div class="eyebrow">Independent General SELT UKVI trainer</div>
+            <h1>Practise the exam, not generic English.</h1>
+            <p>Build speed and confidence with realistic task types, timed section mocks and a complete four-skill simulation based on the current published General SELT structure.</p>
+            <div class="hero-actions">
+              <button class="btn btn-light" data-open-skill="listening">Start practice</button>
+              <button class="btn btn-ghost" data-start-mock="full-0">Start Mock 1 · 142 min</button>
+            </div>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat"><strong>120+</strong><span>original question items</span></div>
+            <div class="hero-stat"><strong>4</strong><span>complete skill areas</span></div>
+            <div class="hero-stat"><strong>${totalDone}</strong><span>tasks completed</span></div>
+            <div class="hero-stat"><strong>${state.target}</strong><span>current target level</span></div>
+          </div>
+        </section>
+
+        <div class="section-title-row"><h2>Choose a skill</h2><button class="text-btn" data-nav="format">View official structure →</button></div>
+        <div class="skill-grid">
+          ${Object.entries(SKILLS).map(([key,s]) => {
+            const done = completedCount(key), total = PRACTICE_TASKS[key].length, pct = Math.round(done / total * 100);
+            return `<article class="skill-card" style="--skill:${s.colour}">
+              <div class="skill-icon">${s.icon}</div><h3>${s.title}</h3><p>${s.desc}</p>
+              <div class="mini-progress"><span style="width:${pct}%"></span></div>
+              <div class="skill-meta"><span>${done}/${total} task types completed</span><span>${OFFICIAL[key].minutes} min exam</span></div>
+              <div class="skill-links"><button class="btn btn-outline" data-open-skill="${key}">Practice</button><button class="btn btn-primary" data-start-mock="${key}">Section mock</button></div>
+            </article>`;
+          }).join("")}
+        </div>
+
+        <div class="section-title-row"><h2>Exam simulation</h2></div>
+        <div class="dashboard-grid">
+          <article class="panel mock-banner">
+            <div><span class="tag" style="background:rgba(255,255,255,.15);color:#fff">8 full simulations</span><h3>General SELT full mock library</h3>
+              <p>Complete 30 Listening questions, 30 Reading questions, two Writing tasks and all four Speaking stages. Each numbered mock uses a different fixed combination.</p>
+              <div class="mock-specs"><span>142 minutes each</span><span>AI writing & speaking</span><span>Saved result</span></div>
+            </div>
+            <button class="btn btn-light" data-start-mock="full-0">Begin Mock 1</button>
+          </article>
+          <article class="panel">
+            <div class="panel-head"><h3>Test map</h3><span class="tag blue">A2–C1</span></div>
+            <div class="exam-map">
+              ${Object.entries(OFFICIAL).map(([key,o],i) => `<div class="exam-row"><div class="exam-num">0${i+1}</div><div><strong>${SKILLS[key].title}</strong><span>${o.label}</span></div><span class="tag">${o.minutes} min</span></div>`).join("")}
+            </div>
+          </article>
+        </div>
+        <div class="section-title-row"><h2>Eight full mock tests</h2><span class="tag blue">Different fixed papers</span></div>
+        <div class="mock-library">
+          ${FULL_MOCKS.map(mock => `<button class="mock-choice" data-start-mock="full-${mock.id}"><span class="tag ${mock.id===7?"amber":"blue"}">${String(mock.id+1).padStart(2,"0")} · 142 min</span><strong>${mock.name}</strong><span>${mock.focus}<br>60 objective questions + Writing + Speaking</span></button>`).join("")}
+        </div>
+        <div class="notice" style="margin-top:18px"><strong>About the questions:</strong> This platform does not reproduce confidential live exam items. It uses original material written to match the published task types, timings and everyday General SELT contexts. Official practice papers remain the best source for authorised past-paper-style material.</div>`;
+    }
+
+    function renderSkill() {
+      const skill = SKILLS[state.skill], tasks = PRACTICE_TASKS[state.skill], official = OFFICIAL[state.skill];
+      return `
+        <div class="page-head"><div><div class="eyebrow">${official.minutes}-minute exam section</div><h1>${skill.title} practice</h1><p class="lead">${skill.desc} Choose focused practice for instant review, or take a timed section mock with the published number of tasks.</p></div><button class="btn btn-primary" data-start-mock="${state.skill}">Start ${official.minutes}-minute mock</button></div>
+        <div class="task-grid">
+          ${tasks.map((t,i) => `<article class="task-card">
+            <div class="task-top"><span class="task-number">Practice ${String(i+1).padStart(2,"0")}</span><span class="tag ${state.completed[`${state.skill}:${t.id}`] ? "green" : "blue"}">${state.completed[`${state.skill}:${t.id}`] ? "Completed" : t.meta}</span></div>
+            <h3>${t.title}</h3><p>${t.desc}</p>
+            <button class="btn btn-outline" data-open-task="${t.id}">${state.completed[`${state.skill}:${t.id}`] ? "Practise again" : "Start practice"}</button>
+          </article>`).join("")}
+        </div>
+        <div class="panel" style="margin-top:18px">
+          <div class="panel-head"><h3>Fresh variant</h3><span class="tag amber">Question bank</span></div>
+          <p class="lead" style="font-size:12px">Each time you choose “new variant”, the platform draws a different set or prompt from the bank. Your completed task types remain saved on this device.</p>
+        </div>`;
+    }
+
+    function buildTask(skill, id, variant = 0) {
+      if (skill === "listening") {
+        if (id === "l1") return { title: "Listening Part 1 · Dialogue completions", instructions: "Listen to each unfinished dialogue and choose the most appropriate completion. In the exam, each part is played twice.", type: "mcq-audio-items", items: shuffle(L1, variant + 71).slice(0,7).map((x,i) => ({ audio: x[0], q: `Choose the best continuation for dialogue ${i+1}.`, options:x[1], answer:x[2], explanation:x[3] })) };
+        if (id === "l2") {
+          const chosen = shuffle(L2, variant + 91).slice(0,5);
+          return { title: "Listening Part 2 · Conversations", instructions: "Listen to five conversations and answer two questions about each.", type:"audio-groups", groups:chosen };
+        }
+        if (id === "l3") {
+          const x = L3[variant % L3.length];
+          return { title:`Listening Part 3 · ${x.title}`, instructions:"Listen and complete each note using no more than three words.", type:"audio-notes", audio:x.audio, notes:x.notes };
+        }
+        const x = L4[variant % L4.length];
+        return { title:`Listening Part 4 · ${x.title}`, instructions:"Listen to the discussion and answer six questions. Focus on opinion, reason and agreement.", type:"audio-discussion", audio:x.audio, questions:x.questions };
+      }
+      if (skill === "reading") {
+        if (id === "r1a") return { title:"Reading Part 1a · Vocabulary in context", instructions:"Choose the word that can replace the highlighted word without changing the meaning.", type:"mcq", questions:shuffle(R1A, variant + 113).slice(0,6).map(x => ({q:x[0],options:x[1],answer:x[2],explanation:x[3]})) };
+        if (id === "r1b") {
+          const x = CLOZE[variant % CLOZE.length];
+          return { title:`Reading Part 1b · ${x.title}`, instructions:"Choose the best word for each gap.", type:"cloze", text:x.text, gaps:x.gaps };
+        }
+        if (id === "r2") {
+          const x = INSERTION[variant % INSERTION.length];
+          return { title:`Reading Part 2 · ${x.title}`, instructions:"Choose the sentence that best fits each numbered gap. Two sentences are extra.", type:"insertion", ...x };
+        }
+        if (id === "r3") {
+          const x = MATCHING[variant % MATCHING.length];
+          return { title:`Reading Part 3 · ${x.title}`, instructions:"Read texts A–D. For each question, choose the person or place that matches.", type:"matching", ...x };
+        }
+        const x = LONG_READS[variant % LONG_READS.length];
+        return { title:`Reading Part 4 · ${x.title}`, instructions:"Read the text and answer six four-option questions.", type:"longread", ...x };
+      }
+      if (skill === "writing") {
+        const formal = id === "w1", bank = formal ? WRITING.formal : WRITING.informal;
+        return { title:`Writing ${formal ? "Part 1 · Formal response" : "Part 2 · Informal writing"}`, instructions:`Write ${formal ? "100–150" : "150–200"} words. Allow time to plan and check your work.`, type:"writing", prompt:bank[variant % bank.length], min:formal?100:150, max:formal?150:200 };
+      }
+      const index = variant % SPEAKING.personal.length;
+      if (id === "s1") return { title:"Speaking Part 1 · Personal questions", instructions:"Answer naturally. Develop each response with a reason, example or detail.", type:"speaking", prompt:SPEAKING.personal[index], prep:0, talk:180 };
+      if (id === "s2") return { title:"Speaking Part 2 · Role-plays", instructions:"Take an active part. Ask questions, clarify details and work towards an outcome.", type:"speaking", prompt:SPEAKING.roleplay[variant % SPEAKING.roleplay.length], prep:20, talk:180 };
+      if (id === "s3") return { title:"Speaking Part 3 · Read aloud", instructions:"Read clearly and naturally. Then summarise the main message and imagine two follow-up questions.", type:"speaking", prompt:SPEAKING.readaloud[variant % SPEAKING.readaloud.length], prep:20, talk:120 };
+      return { title:"Speaking Part 4 · Presentation", instructions:"You have 30 seconds to prepare. Speak for one to two minutes, then answer follow-up questions.", type:"speaking", prompt:SPEAKING.presentation[variant % SPEAKING.presentation.length], prep:30, talk:120 };
+    }
+
+    function renderTask() {
+      const task = buildTask(state.skill, state.taskId, state.variant);
+      const count = taskQuestionCount(task), answered = answeredCount(task, state.answers);
+      const practiceScore = state.checked && count ? scoreTask(task, state.answers) : null;
+      return `<div class="exam-layout">
+        <section class="exam-paper">
+          <div class="exam-header"><div><span class="tag blue">${practiceScore ? `Score ${practiceScore.correct}/${practiceScore.total}` : state.mode === "practice" ? "Practice mode" : "Timed"}</span><h2>${task.title}</h2><p>${task.instructions}</p></div>${state.timer !== null ? `<div class="timer" id="mainTimer">${fmt(state.timer)}</div>` : ""}</div>
+          <div class="exam-body">${renderTaskBody(task, false)}</div>
+          <div class="exam-actions"><div class="action-group"><button class="btn btn-outline" data-back-skill>Exit</button><button class="btn btn-outline" data-new-variant>New variant</button></div><div class="action-group">${state.checked ? `<button class="btn btn-primary" data-try-again>Try again</button>` : `<button class="btn btn-primary" data-check-task>${task.type === "writing" || task.type === "speaking" ? "Open self-review" : "Check answers"}</button>`}</div></div>
+        </section>
+        <aside class="exam-side">
+          <div class="side-panel"><h3>Progress</h3><div class="progress-line"><span style="width:${count ? Math.round(answered/count*100) : 0}%"></span></div><div class="side-meta"><span>${answered} answered</span><span>${count || "Self-review"} items</span></div></div>
+          ${count ? `<div class="side-panel"><h3>Question navigator</h3><div class="number-grid">${Array.from({length:count},(_,i)=>`<span class="number-dot ${isAnswered(state.answers[i]) ? "done" : ""}">${i+1}</span>`).join("")}</div></div>` : ""}
+          <div class="side-panel"><h3>Exam habit</h3><ul class="tips">${tipsFor(state.skill).map(t=>`<li>${t}</li>`).join("")}</ul></div>
+        </aside>
+      </div>`;
+    }
+
+    function taskQuestionCount(task) {
+      if (task.items) return task.items.length;
+      if (task.questions) return task.questions.length;
+      if (task.notes) return task.notes.length;
+      if (task.gaps) return task.gaps.length;
+      if (task.type === "insertion" && task.answers) return task.answers.length;
+      if (task.groups) return task.groups.reduce((n,g)=>n+g.questions.length,0);
+      return 0;
+    }
+    function isAnswered(v) { return v !== undefined && v !== null && String(v).trim() !== ""; }
+    function answeredCount(task, answers) {
+      if (task.type === "writing") return wordCount(answers.text) ? 1 : 0;
+      if (task.type === "speaking") return answers.reviewed ? 1 : 0;
+      return Array.from({ length: taskQuestionCount(task) }, (_, i) => answers?.[i]).filter(isAnswered).length;
+    }
+    function tipsFor(skill) {
+      return {
+        listening:["Read the question before pressing play.","Expect paraphrase, not repeated wording.","Check spelling in note completion."],
+        reading:["Use context before choosing vocabulary.","Track reference words in missing-sentence tasks.","Do not spend too long on one item."],
+        writing:["Plan content points before writing.","Match the reader and purpose.","Leave two minutes to edit."],
+        speaking:["Extend answers with reasons and examples.","Initiate as well as respond in role-plays.","Keep speaking after a small mistake."]
+      }[skill];
+    }
+
+    function renderTaskBody(task, mockMode) {
+      const checked = state.checked && !mockMode;
+      if (task.type === "mcq") return task.questions.map((q,i)=>renderMCQ(q,i,checked,mockMode)).join("");
+      if (task.type === "mcq-audio-items") return task.items.map((q,i)=>`<div class="audio-box"><div><strong>Dialogue ${i+1}</strong><span>Use headphones if available · playback ${playCount(i,mockMode)}/2</span></div><button class="audio-btn" data-play-item="${i}">▶ Play audio</button></div>${renderMCQ(q,i,checked,mockMode)}`).join("");
+      if (task.type === "audio-groups") {
+        let idx = 0;
+        return task.groups.map((g,gi)=>`<div class="audio-box"><div><strong>Conversation ${gi+1} · ${g.title}</strong><span>Two questions · playback ${playCount(`g${gi}`,mockMode)}/2</span></div><button class="audio-btn" data-play-group="${gi}">▶ Play audio</button></div>${g.questions.map(q=>renderMCQ({q:q[0],options:q[1],answer:q[2],explanation:q[3]},idx++,checked,mockMode)).join("")}`).join("");
+      }
+      if (task.type === "audio-notes") return `<div class="audio-box"><div><strong>${task.title.replace("Listening Part 3 · ","")}</strong><span>One monologue · playback ${playCount("main",mockMode)}/2</span></div><button class="audio-btn" data-play-main>▶ Play audio</button></div>${task.notes.map((n,i)=>renderShort(n[0],n[1],i,checked,mockMode)).join("")}`;
+      if (task.type === "audio-discussion") return `<div class="audio-box"><div><strong>Group discussion</strong><span>Long recording · playback ${playCount("main",mockMode)}/2</span></div><button class="audio-btn" data-play-main>▶ Play audio</button></div>${task.questions.map((q,i)=>renderMCQ({q:q[0],options:q[1],answer:q[2],explanation:q[3]},i,checked,mockMode)).join("")}`;
+      if (task.type === "cloze") return `<div class="source-box">${renderGapText(task.text)}</div>${task.gaps.map((g,i)=>renderMCQ({q:`Choose the best word for gap ${i+1}.`,options:g[0],answer:g[1],explanation:"Check grammar, meaning and the words immediately around the gap."},i,checked,mockMode)).join("")}`;
+      if (task.type === "insertion") return `<div class="source-box">${task.paragraphs.join("\n\n")}</div><div class="source-box" style="font-family:inherit;font-size:12px">${task.sentences.join("\n")}</div>${task.answers.map((a,i)=>renderMCQ({q:`Which sentence fits gap ${i+1}?`,options:task.sentences,answer:a,explanation:"Look for pronoun reference, linking language and the flow of ideas."},i,checked,mockMode)).join("")}`;
+      if (task.type === "matching") return `<div class="source-box" style="font-family:inherit;font-size:12px">${task.texts.join("\n\n")}</div>${task.questions.map((q,i)=>renderMCQ({q:q[0],options:task.texts.map(t=>t.slice(0,1)),answer:q[1],explanation:"Match the precise detail, not only the general topic."},i,checked,mockMode)).join("")}`;
+      if (task.type === "longread") return `<div class="source-box">${esc(task.text)}</div>${task.questions.map((q,i)=>renderMCQ({q:q[0],options:q[1],answer:q[2],explanation:q[3]},i,checked,mockMode)).join("")}`;
+      if (task.type === "writing") {
+        const text = state.answers.text || "", wc = wordCount(text), good = wc >= task.min && wc <= task.max;
+        return `<div class="instruction">${esc(task.prompt).replace(/\n/g,"<br>")}</div><textarea class="answer-area" data-writing placeholder="Write your response here...">${esc(text)}</textarea><div class="writing-bar"><span>Target: ${task.min}–${task.max} words</span><span class="word-count ${wc ? (good ? "good":"bad") : ""}" id="wordCount">${wc} words</span></div>
+          <div class="ai-actions"><button class="btn btn-primary" data-ai-writing ${wc<35?"disabled":""}>${state.answers.aiEvaluation ? "Evaluate again" : "Evaluate writing with AI"}</button><span class="ai-status" id="aiStatus">${state.answers.aiEvaluation ? (mockMode ? "AI score saved for final results." : "Practice estimate generated.") : "Requires the secure local server and a configured Groq key."}</span></div>
+          ${state.answers.aiError ? `<div class="notice" style="margin-top:12px">${esc(state.answers.aiError)}</div>` : ""}
+          ${state.answers.aiEvaluation && !mockMode ? renderAIReport(state.answers.aiEvaluation,"writing") : ""}
+          ${checked ? renderRubric("writing") : ""}`;
+      }
+      if (task.type === "speaking") return `<div class="speaking-prompt">${esc(task.prompt)}</div><div class="big-timer" id="speakTimer">${fmt(state.answers.speakSeconds ?? (task.prep || task.talk))}</div><div class="action-group" style="justify-content:center"><button class="btn btn-primary" data-start-speaking>${task.prep ? `Start ${task.prep}s preparation` : "Start response timer"}</button><button class="btn btn-outline" data-reset-speaking>Reset timer</button></div>
+        <div class="recording-panel"><strong>AI speaking evaluation</strong><p style="margin:5px 0 10px;color:#75500c;font-size:11px">Record your answer. Groq transcribes the audio, then evaluates the transcript. Pronunciation is not scored from transcript alone.</p><div class="ai-actions"><button class="btn btn-danger" data-record-speaking>${state.answers.recording ? "Stop recording" : "Start recording"}</button>${state.answers.audioBase64 ? `<button class="btn btn-primary" data-ai-speaking>${state.answers.aiEvaluation ? "Evaluate again" : "Transcribe & evaluate"}</button>`:""}<span class="ai-status" id="aiStatus">${state.answers.recording ? "Recording now..." : state.answers.audioBase64 ? "Recording ready." : "Microphone permission is required."}</span></div>${state.answers.transcript ? `<div class="transcript-box"><strong>Transcript</strong><br>${esc(state.answers.transcript)}</div>`:""}${state.answers.aiError ? `<div class="notice" style="margin-top:12px">${esc(state.answers.aiError)}</div>`:""}${state.answers.aiEvaluation && !mockMode ? renderAIReport(state.answers.aiEvaluation,"speaking"):""}</div>
+        ${checked ? renderRubric("speaking") : ""}`;
+      return "";
+    }
+
+    function renderAIReport(report,type) {
+      const labels = {
+        taskAchievement:"Task achievement", organisation:"Organisation", grammar:"Grammar",
+        vocabulary:"Vocabulary", registerAndMechanics:"Register & mechanics",
+        taskFulfilment:"Task fulfilment", fluencyAndCoherence:"Fluency & coherence",
+        interactiveCommunication:"Interaction", pronunciation:"Pronunciation"
+      };
+      return `<section class="ai-report"><div class="ai-score-row"><div class="ai-score">${report.overall}/100</div><div><span class="tag blue">AI practice estimate · ${esc(report.estimatedLevel)}</span><h3>${type==="writing"?"Writing examiner report":"Speaking examiner report"}</h3><p>${esc(report.summary)}</p></div></div>
+        <div class="criteria-grid">${Object.entries(report.criteria||{}).map(([key,value])=>`<div class="criterion">${labels[key]||key}<strong>${value===null?"N/A":value}</strong></div>`).join("")}</div>
+        <div class="feedback-cols"><div class="feedback-box"><h4>What worked</h4><ul>${(report.strengths||[]).map(x=>`<li>${esc(x)}</li>`).join("")||"<li>No strengths returned.</li>"}</ul></div><div class="feedback-box"><h4>Improve next</h4><ul>${(report.improvements||[]).map(x=>`<li>${esc(x)}</li>`).join("")||"<li>No improvements returned.</li>"}</ul></div></div>
+        ${report.pronunciationNote?`<div class="notice" style="margin-top:12px">${esc(report.pronunciationNote)}</div>`:""}
+        <p style="margin-top:12px"><strong>Important:</strong> AI feedback is a practice estimate, not an official LanguageCert result.</p></section>`;
+    }
+
+    function renderGapText(text) { return esc(text).replace(/\[(\d)\]/g, "<strong style='color:var(--blue)'>[$1]</strong>"); }
+    function currentAnswer(index, mockMode) {
+      if (mockMode) return state.mock.answers[state.mock.step]?.[index];
+      return state.answers[index];
+    }
+    function renderMCQ(q,index,checked,mockMode) {
+      const selected = currentAnswer(index,mockMode);
+      return `<div class="question"><div class="q-label">Question ${index+1}</div><div class="q-text">${q.q}</div><div class="options">${q.options.map((o,oi)=>{
+        let cls = "option";
+        if (checked && oi === q.answer) cls += " correct";
+        else if (checked && oi === selected) cls += " incorrect";
+        else if (selected === oi) cls += " selected";
+        return `<label class="${cls}"><input type="radio" name="${mockMode?"m":"p"}q${state.mock?.step ?? ""}_${index}" data-answer="${index}:${oi}" ${selected===oi?"checked":""} ${checked?"disabled":""}><span>${o}</span></label>`;
+      }).join("")}</div>${checked ? `<div class="feedback ${selected===q.answer?"good":"bad"}">${selected===q.answer?"Correct.":`Correct answer: ${q.options[q.answer]}`} <span class="explanation">${q.explanation || ""}</span></div>`:""}</div>`;
+    }
+    function renderShort(label,accepted,index,checked,mockMode) {
+      const value = currentAnswer(index,mockMode) || "", good = checked && answerMatches(value,accepted);
+      return `<div class="question"><div class="q-label">Question ${index+1}</div><div class="q-text">${label}</div><input class="short-input ${checked?(good?"correct":"incorrect"):""}" data-short="${index}" value="${esc(value)}" placeholder="No more than three words" ${checked?"disabled":""}>${checked?`<div class="feedback ${good?"good":"bad"}">${good?"Correct.":`Suggested answer: ${accepted[0]}.`}</div>`:""}</div>`;
+    }
+    function renderRubric(type) {
+      const items = type === "writing" ? [
+        "I covered every content point in the prompt.", "My tone and register suit the reader and purpose.",
+        "My ideas are organised into clear paragraphs.", "I used varied grammar and precise vocabulary.",
+        "I checked agreement, tense, spelling and punctuation.", "I stayed within the required word range."
+      ] : [
+        "I answered fully rather than using one short sentence.", "I gave reasons, examples or supporting detail.",
+        "I used linking language to organise longer answers.", "I initiated interaction where the task required it.",
+        "My pace and pronunciation were generally easy to follow.", "I recovered naturally when I hesitated or made a mistake."
+      ];
+      return `<div class="rubric"><h3 style="margin:8px 0 0">Self-review checklist</h3>${items.map((x,i)=>`<label><input type="checkbox" data-rubric="${i}" ${state.answers.rubric?.[i]?"checked":""}>${x}</label>`).join("")}<div class="notice">Writing and speaking need human assessment. This checklist helps you review performance, but it is not an official LanguageCert score.</div></div>`;
+    }
+    function playCount(key,mockMode) {
+      const plays = mockMode ? (state.mock.plays[state.mock.step] || {}) : (state.answers.plays || {});
+      return plays[key] || 0;
+    }
+
+    function startSectionMock(skill) {
+      clearTimer();
+      const sequence = PRACTICE_TASKS[skill].map(t => ({ skill, id:t.id, task:buildTask(skill,t.id,Date.now()+t.id.charCodeAt(1)) }));
+      state = { ...state, view:"mock", skill, mode:"section", answers:{}, checked:false, timer:OFFICIAL[skill].minutes*60, mock:{ type:"section", skill, step:0, sequence, answers:{}, plays:{}, started:Date.now(), sectionScores:{} } };
+      render();
+    }
+    function startFullMock(mockId = 0) {
+      clearTimer();
+      const paper = FULL_MOCKS[Number(mockId)] || FULL_MOCKS[0];
+      const seed = paper.seed;
+      const sequence = [];
+      ["listening","reading","writing","speaking"].forEach(skill => PRACTICE_TASKS[skill].forEach(t => sequence.push({skill,id:t.id,task:buildTask(skill,t.id,seed+t.id.charCodeAt(1))})));
+      state = { ...state, view:"mock", skill:"listening", mode:"full", answers:{}, checked:false, timer:142*60, mock:{ type:"full", mockId:paper.id, mockName:paper.name, step:0, sequence, answers:{}, plays:{}, started:Date.now(), sectionScores:{} } };
+      render();
+    }
+    function renderMock() {
+      const m = state.mock, entry = m.sequence[m.step], task = entry.task;
+      state.skill = entry.skill;
+      state.answers = m.answers[m.step] || {};
+      const count = taskQuestionCount(task), answered = answeredCount(task,state.answers);
+      return `<div class="exam-layout">
+        <section class="exam-paper">
+          <div class="exam-header"><div><span class="tag amber">${m.type === "full" ? m.mockName : `${SKILLS[m.skill].title} mock`} · Task ${m.step+1}/${m.sequence.length}</span><h2>${task.title}</h2><p>${task.instructions}</p></div><div class="timer ${state.timer<120?"warn":""}" id="mainTimer">${fmt(state.timer)}</div></div>
+          <div class="exam-body">${renderTaskBody(task,true)}</div>
+          <div class="exam-actions"><div class="action-group"><button class="btn btn-danger" data-end-mock>End mock</button>${m.step>0?`<button class="btn btn-outline" data-mock-prev>Previous</button>`:""}</div><div class="action-group">${m.step<m.sequence.length-1?`<button class="btn btn-primary" data-mock-next>Save & next</button>`:`<button class="btn btn-primary" data-finish-mock>Finish mock</button>`}</div></div>
+        </section>
+        <aside class="exam-side">
+          <div class="side-panel"><h3>Test progress</h3><div class="progress-line"><span style="width:${Math.round((m.step+1)/m.sequence.length*100)}%"></span></div><div class="side-meta"><span>${SKILLS[entry.skill].title}</span><span>${m.step+1}/${m.sequence.length} tasks</span></div></div>
+          <div class="side-panel"><h3>Current task</h3><div class="number-grid">${Array.from({length:Math.max(count,1)},(_,i)=>`<span class="number-dot ${isAnswered(state.answers[i])?"done":""}">${i+1}</span>`).join("")}</div><div class="side-meta"><span>${answered} answered</span><span>${count || "Self-assessed"}</span></div></div>
+          <div class="side-panel"><h3>Mock rules</h3><ul class="tips"><li>Audio is limited to two plays.</li><li>Answers are not shown until the end.</li><li>The timer continues across every task.</li></ul></div>
+        </aside>
+      </div>`;
+    }
+
+    function scoreTask(task, answers) {
+      let correct = 0, total = taskQuestionCount(task);
+      const check = (idx, expected) => { if (answers[idx] === expected) correct++; };
+      if (["mcq","mcq-audio-items"].includes(task.type)) (task.questions || task.items).forEach((q,i)=>check(i,q.answer));
+      if (task.type === "audio-groups") { let n=0; task.groups.forEach(g=>g.questions.forEach(q=>check(n++,q[2]))); }
+      if (task.type === "audio-notes") task.notes.forEach((n,i)=>{ if(answerMatches(answers[i],n[1])) correct++; });
+      if (task.type === "audio-discussion" || task.type === "longread") task.questions.forEach((q,i)=>check(i,q[2]));
+      if (task.type === "cloze") task.gaps.forEach((g,i)=>check(i,g[1]));
+      if (task.type === "insertion") task.answers.forEach((a,i)=>check(i,a));
+      if (task.type === "matching") task.questions.forEach((q,i)=>check(i,q[1]));
+      return { correct, total };
+    }
+    function finishMock() {
+      clearTimer();
+      state.mock.answers[state.mock.step] = { ...state.answers };
+      const bySkill = {};
+      state.mock.sequence.forEach((entry,i) => {
+        const score = scoreTask(entry.task,state.mock.answers[i] || {});
+        if (!bySkill[entry.skill]) bySkill[entry.skill] = {correct:0,total:0,written:0};
+        bySkill[entry.skill].correct += score.correct;
+        bySkill[entry.skill].total += score.total;
+        if (entry.task.type === "writing" && wordCount((state.mock.answers[i]||{}).text)) bySkill[entry.skill].written++;
+      });
+      const result = { date:new Date().toISOString(), type:state.mock.type, skill:state.mock.skill, mockId:state.mock.mockId, mockName:state.mock.mockName, bySkill, duration:Math.round((Date.now()-state.mock.started)/1000), sequence:state.mock.sequence, answers:state.mock.answers };
+      state.history.unshift({ date:result.date, type:result.type, skill:result.skill, bySkill:result.bySkill });
+      state.history = state.history.slice(0,10);
+      state.result = result;
+      state.view = "results";
+      saveState();
+      render();
+    }
+    function renderResults() {
+      const r = state.result;
+      if (!r) return renderHome();
+      const scored = Object.values(r.bySkill).reduce((a,s)=>({correct:a.correct+s.correct,total:a.total+s.total}),{correct:0,total:0});
+      const pct = scored.total ? Math.round(scored.correct/scored.total*100) : 0;
+      const aiScores = { writing:[], speaking:[] };
+      r.sequence.forEach((entry,i)=>{ const score=r.answers[i]?.aiEvaluation?.overall; if(Number.isFinite(score)&&aiScores[entry.skill]) aiScores[entry.skill].push(score); });
+      const aiAverage = skill => aiScores[skill]?.length ? Math.round(aiScores[skill].reduce((a,b)=>a+b,0)/aiScores[skill].length) : null;
+      return `<div class="result-hero"><span class="tag" style="background:rgba(255,255,255,.14);color:#fff">${esc(r.mockName || "Practice result")}</span><div class="score-ring"><strong>${scored.total?pct+"%":"Done"}</strong></div><h1>${pct>=75?"Strong performance":pct>=60?"Good progress":"Keep building accuracy"}</h1><p>${scored.correct}/${scored.total} objective answers correct. Writing and speaking show AI estimates when submitted.</p></div>
+        <div class="result-grid">${Object.entries(r.bySkill).map(([skill,s])=>{const ai=aiAverage(skill);return `<div class="result-card"><strong>${s.total?Math.round(s.correct/s.total*100)+"%":ai!==null?ai+"/100":"Not scored"}</strong><span>${SKILLS[skill].title} · ${s.total?`${s.correct}/${s.total} objective`:"AI practice estimate"}</span></div>`;}).join("")}</div>
+        <div class="dashboard-grid">
+          <section class="panel"><div class="panel-head"><h3>What this score means</h3><span class="tag amber">Practice estimate</span></div><p class="lead" style="font-size:12px">This percentage measures only objective questions in this practice set. Official General SELT results use the LanguageCert Global Scale and assess each skill separately. Your target of ${state.target} corresponds to the published UKVI minimum of ${state.target==="B1"?40:state.target==="B2"?60:75} in each required skill.</p><div class="notice" style="margin-top:15px">Do not treat this practice result as an official predicted score. Use it to identify task types that need more work.</div></section>
+          <section class="panel"><div class="panel-head"><h3>Next action</h3></div><div class="action-group"><button class="btn btn-primary" data-nav="home">Dashboard</button><button class="btn btn-outline" data-start-mock="${r.type==="full"?`full-${r.mockId ?? 0}`:r.skill}">Repeat this mock</button></div></section>
+        </div>`;
+    }
+
+    function renderFormat() {
+      return `<div class="page-head"><div><div class="eyebrow">Published exam structure</div><h1>General SELT format</h1><p class="lead">The General SELT (A2–C1) is a multilevel, four-skill UKVI test. The full duration is approximately 2 hours 22 minutes.</p></div></div>
+        <div class="task-grid">${Object.entries(SKILLS).map(([key,s])=>`<article class="task-card"><div class="task-top"><span class="task-number">${s.title}</span><span class="tag blue">${OFFICIAL[key].minutes} min</span></div><h3>${OFFICIAL[key].label}</h3><p>${formatDetail(key)}</p><button class="btn btn-outline" data-open-skill="${key}">Open practice</button></article>`).join("")}</div>
+        <div class="panel" style="margin-top:18px"><h3>UKVI target scores</h3><p class="lead" style="font-size:12px">LanguageCert currently publishes minimum scores per skill of 40 for B1, 60 for B2 and 75 for C1 for relevant General SELT visa routes. Always check the exact visa requirement before booking.</p><p style="margin:14px 0 0;font-size:12px"><a href="https://selt.languagecert.org/general-a2-c1-test" target="_blank" rel="noopener" style="color:var(--blue);font-weight:800">Open the official General SELT page ↗</a></p></div>`;
+    }
+    function formatDetail(key) {
+      return {
+        listening:"7 dialogue completions; 5 conversations with 2 questions each; 7 note gaps; 6 discussion questions. Each part is played twice.",
+        reading:"6 vocabulary questions; 5 cloze questions; 6 missing sentences; 7 multiple-matching questions; 6 long-text questions.",
+        writing:"A 100–150 word formal or neutral response and a 150–200 word informal piece.",
+        speaking:"Personal questions; two role-play situations; read aloud with questions; prepared one-to-two-minute presentation."
+      }[key];
+    }
+
+    function startPractice(skill,id) {
+      state.view="task"; state.skill=skill; state.mode="practice"; state.taskId=id; state.variant=Date.now()%10000; state.answers={plays:{}}; state.checked=false; state.timer=null;
+      render();
+    }
+    function checkPractice() {
+      state.checked = true;
+      state.completed[`${state.skill}:${state.taskId}`] = true;
+      saveState();
+      render();
+    }
+    function clearTimer(reset=true) {
+      if (state.timerId) clearInterval(state.timerId);
+      state.timerId = null;
+      if (reset && state.view !== "mock") state.timer = null;
+    }
+    function startTimerTick() {
+      if (state.timerId) return;
+      state.timerId = setInterval(() => {
+        state.timer = Math.max(0,(state.timer||0)-1);
+        const el = document.getElementById("mainTimer");
+        if (el) { el.textContent=fmt(state.timer); el.classList.toggle("warn",state.timer<120); }
+        if (state.timer === 0) {
+          clearTimer(false);
+          if (state.view === "mock") finishMock(); else { state.checked=true; render(); }
+        }
+      },1000);
+    }
+    function playAudio(text,key) {
+      const mockMode = state.view === "mock";
+      const plays = mockMode ? (state.mock.plays[state.mock.step] ||= {}) : (state.answers.plays ||= {});
+      if ((plays[key] || 0) >= 2) return;
+      speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = "en-GB";
+      utter.rate = .92;
+      utter.pitch = 1;
+      plays[key] = (plays[key] || 0) + 1;
+      speechSynthesis.speak(utter);
+      render();
+    }
+    function currentTask() {
+      return state.view === "mock" ? state.mock.sequence[state.mock.step].task : buildTask(state.skill,state.taskId,state.variant);
+    }
+    function saveMockStep() { state.mock.answers[state.mock.step] = { ...state.answers }; }
+
+    function bindEvents() {
+      document.querySelectorAll("[data-nav]").forEach(el => el.addEventListener("click", () => {
+        const k=el.dataset.nav;
+        if(k==="home"){ state.view="home";state.skill=null; }
+        else if(k==="format"){state.view="format";state.skill=null;}
+        else {state.view="skill";state.skill=k;}
+        state.mock=null; state.answers={}; render();
+      }));
+      document.querySelectorAll("[data-open-skill]").forEach(el => el.addEventListener("click",()=>{state.view="skill";state.skill=el.dataset.openSkill;state.mock=null;render();}));
+      document.querySelectorAll("[data-open-task]").forEach(el => el.addEventListener("click",()=>startPractice(state.skill,el.dataset.openTask)));
+      document.querySelectorAll("[data-start-mock]").forEach(el => el.addEventListener("click",()=>{
+        const value = el.dataset.startMock;
+        if (value.startsWith("full-")) startFullMock(Number(value.split("-")[1]));
+        else startSectionMock(value);
+      }));
+      document.querySelector("[data-back-skill]")?.addEventListener("click",()=>{state.view="skill";state.answers={};render();});
+      document.querySelector("[data-new-variant]")?.addEventListener("click",()=>{state.variant++;state.answers={plays:{}};state.checked=false;render();});
+      document.querySelector("[data-try-again]")?.addEventListener("click",()=>{state.answers={plays:{}};state.checked=false;render();});
+      document.querySelector("[data-check-task]")?.addEventListener("click",checkPractice);
+
+      document.querySelectorAll("[data-answer]").forEach(input => input.addEventListener("change", () => {
+        const [i,v]=input.dataset.answer.split(":").map(Number); state.answers[i]=v;
+        if(state.view==="mock") state.mock.answers[state.mock.step]={...state.answers};
+        render();
+      }));
+      document.querySelectorAll("[data-short]").forEach(input => input.addEventListener("input", () => {
+        state.answers[Number(input.dataset.short)]=input.value;
+        if(state.view==="mock") state.mock.answers[state.mock.step]={...state.answers};
+      }));
+      document.querySelector("[data-writing]")?.addEventListener("input", e => {
+        state.answers.text=e.target.value;
+        if(state.view==="mock") state.mock.answers[state.mock.step]={...state.answers};
+        const wc=wordCount(e.target.value), task=currentTask(), el=document.getElementById("wordCount");
+        if(el){el.textContent=`${wc} words`;el.className=`word-count ${wc>=task.min&&wc<=task.max?"good":wc?"bad":""}`;}
+        const aiButton=document.querySelector("[data-ai-writing]");
+        if(aiButton) aiButton.disabled=wc<35;
+      });
+      document.querySelectorAll("[data-rubric]").forEach(input=>input.addEventListener("change",()=>{
+        state.answers.rubric ||= []; state.answers.rubric[Number(input.dataset.rubric)]=input.checked; state.answers.reviewed=true;
+      }));
+
+      if (!["task","mock"].includes(state.view)) return;
+      const task = currentTask();
+      document.querySelectorAll("[data-play-item]").forEach(btn=>btn.addEventListener("click",()=>playAudio(task.items[Number(btn.dataset.playItem)].audio,Number(btn.dataset.playItem))));
+      document.querySelectorAll("[data-play-group]").forEach(btn=>{const i=Number(btn.dataset.playGroup);btn.addEventListener("click",()=>playAudio(task.groups[i].audio,`g${i}`));});
+      document.querySelector("[data-play-main]")?.addEventListener("click",()=>playAudio(task.audio,"main"));
+      document.querySelector("[data-ai-writing]")?.addEventListener("click",event=>evaluateWritingWithAI(task,event.currentTarget));
+      document.querySelector("[data-record-speaking]")?.addEventListener("click",event=>toggleSpeakingRecording(event.currentTarget));
+      document.querySelector("[data-ai-speaking]")?.addEventListener("click",event=>evaluateSpeakingWithAI(task,event.currentTarget));
+
+      document.querySelector("[data-mock-next]")?.addEventListener("click",()=>{saveMockStep();state.mock.step++;state.skill=state.mock.sequence[state.mock.step].skill;state.answers=state.mock.answers[state.mock.step]||{};render();});
+      document.querySelector("[data-mock-prev]")?.addEventListener("click",()=>{saveMockStep();state.mock.step--;state.skill=state.mock.sequence[state.mock.step].skill;state.answers=state.mock.answers[state.mock.step]||{};render();});
+      document.querySelector("[data-finish-mock]")?.addEventListener("click",finishMock);
+      document.querySelector("[data-end-mock]")?.addEventListener("click",()=>{if(confirm("End this mock and show the current result?"))finishMock();});
+      bindSpeaking(task);
+    }
+
+    function bindSpeaking(task) {
+      if (task.type !== "speaking") return;
+      let speechId = null;
+      const reset = () => {
+        if(speechId) clearInterval(speechId);
+        state.answers.speakPhase = task.prep ? "prep" : "talk";
+        state.answers.speakSeconds = task.prep || task.talk;
+        const el=document.getElementById("speakTimer"); if(el) el.textContent=fmt(state.answers.speakSeconds);
+      };
+      document.querySelector("[data-reset-speaking]")?.addEventListener("click",reset);
+      document.querySelector("[data-start-speaking]")?.addEventListener("click",e=>{
+        if(speechId)return;
+        if(state.answers.speakSeconds===undefined) reset();
+        e.target.textContent = state.answers.speakPhase==="prep" ? "Preparing..." : "Speaking...";
+        speechId=setInterval(()=>{
+          state.answers.speakSeconds--;
+          const el=document.getElementById("speakTimer");if(el)el.textContent=fmt(state.answers.speakSeconds);
+          if(state.answers.speakSeconds<=0){
+            clearInterval(speechId);speechId=null;
+            if(state.answers.speakPhase==="prep"){state.answers.speakPhase="talk";state.answers.speakSeconds=task.talk;e.target.textContent="Start speaking";if(el)el.textContent=fmt(task.talk);}
+            else {state.answers.reviewed=true;e.target.textContent="Response complete";}
+          }
+        },1000);
+      });
+    }
+
+    document.getElementById("levelSelect").addEventListener("change",e=>{state.target=e.target.value;saveState();render();});
+    document.getElementById("resetBtn").addEventListener("click",()=>{if(confirm("Reset all saved practice progress?")){localStorage.removeItem("seltMasteryState");state={...defaultState};render();}});
+
+    render();
+  </script>
+</body>
+</html>

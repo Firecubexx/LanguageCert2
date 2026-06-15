@@ -1,0 +1,2 @@
+SELT Mastery running at http://127.0.0.1:8765
+Add GROQ_API_KEY to .env to enable AI evaluation.
